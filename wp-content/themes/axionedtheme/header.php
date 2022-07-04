@@ -13,7 +13,7 @@
     <!--header section start-->
     <header>
       <div class="wrapper">
-        <h1><a href="<?php bloginfo('url') ?>" class="axioned-logo" title="Axioned logo"><img src="https://dummyimage.com/159x58/000/fff.jpg" alt="Axioned Logo">Axioned logo</a></h1>
+        <h1><a href="<?php bloginfo('url') ?>" class="axioned-logo" title="Axioned logo"><img src="https://dummyimage.com/159x58/000/fff.jpg" class="axioned-logo-img" alt="Axioned Logo">Axioned logo</a></h1>
         <?php wp_nav_menu( array(
           'theme_location' => 'primary',
           'menu_class' => 'navbar',
