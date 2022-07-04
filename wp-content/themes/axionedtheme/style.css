@@ -116,13 +116,51 @@ li {
 /*for wrapper*/
 .wrapper {
   max-width: 1360px;
-  width: 86%; 
+  width: 88.6%; 
   margin: 0 auto;
 }
 /*=================================
-  Header styling starts here
+  Custom styling starts here
+=================================*/
+:root {
+  --background-color: #201547;
+  --white-color: #fff;
+}
+
+body {
+  background-color: var(--background-color);
+  overflow: hidden;
+}
+
+a { color: var(--white-color); }
+/*=================================
+  Custom styling ends here
 =================================*/
 
+/*=================================
+  Header styling starts here
+=================================*/
+header .wrapper {
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.axioned-logo-img { width: 39%; }
+.axioned-logo { font-size: 0; }
+.menu { flex-basis: 52%; }
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-item a {
+  font-size: 22px;
+  font-weight: bold;
+}
 
 
 
