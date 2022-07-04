@@ -125,6 +125,8 @@ li {
 :root {
   --background-color: #201547;
   --white-color: #fff;
+  --black-color: #000;
+  --pink-color: #E31C79;
 }
 
 body {
@@ -133,6 +135,12 @@ body {
 }
 
 a { color: var(--white-color); }
+
+.wrapper.home-wrapper {
+  width: 97%;
+  position: relative;
+}
+.container { position: relative; }
 /*=================================
   Custom styling ends here
 =================================*/
@@ -140,14 +148,22 @@ a { color: var(--white-color); }
 /*=================================
   Header styling starts here
 =================================*/
+header {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  background-color: var(--background-color);
+}
+
 header .wrapper {
-  padding: 40px 0;
+  padding: 42px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.axioned-logo-img { width: 39%; }
+.axioned-logo-img { width: 50%; }
 .axioned-logo { font-size: 0; }
 .menu { flex-basis: 52%; }
 
@@ -161,11 +177,6 @@ header .wrapper {
   font-size: 22px;
   font-weight: bold;
 }
-
-
-
-
-
 /*=================================
   Header styling ends here
 =================================*/  
@@ -173,14 +184,133 @@ header .wrapper {
 /*=================================
   main styling starts here
 =================================*/
+/* banner section started here */
+.banner { margin-top: 110px; }
+
+.banner-video {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 48%;
+  left: 9%;
+}
+
+.banner-heading {
+  margin: 9px 0;
+  display: inline-block;
+  background-color: var(--background-color);
+  color: #fff;
+  font-size: 70px;
+  font-weight: bold;
+  line-height: .8;
+}
+
+.pink-color { color: var(--pink-color); }
+/* banner section ended here */
+
+/* work section started here */
+.outter-box {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.inner-box {
+  position: relative;
+  margin: 15px 0;
+}
+.work-link { display: block; }
+
+.work-image {
+  height: 520px;
+  object-fit: cover;
+}
+
+.inner-box .content {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 6%;
+}
+
+.work-heading {
+  color: var(--pink-color);
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.work-paragraph {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* work section ended here */
+
+/* client testimonial section started here */
+.client-testimonials .wrapper {
+  background-color: #F5F5F5;
+  padding: 20px 0;
+}
+
+.client-title {
+  margin: 48px 8.7% 0;
+  font-size: 37px;
+  text-transform: capitalize;
+  background-color: var(--pink-color);
+  display: inline-block;
+  color: var(--background-color);
+  font-weight: bold;
+  line-height: .8;
+}
+
+.client-outter-box {
+  display: flex;
+  justify-content: space-between;
+  width: 77%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.client-inner-box {
+  flex-basis: 41%;
+  height: 490px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #0000001f;
+  padding: 33px;
+}
+
+.client-inner-box figure {
+  width: 52%;
+  margin: 0 auto;
+}
+
+.client-testimonials .content { margin-top: 48px; }
+
+.client-heading {
+  font-size: 20px;
+  text-align: center;
+  color: var(--background-color);
+  font-weight: 600;
+}
+
+.client-paragraph {
+  margin-top: 32px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #706989;
+  letter-spacing: 1px;
+}
 
 
 
-
-
-
-
-
+/* client testimonial section ended here */
 /*=================================
   main styling ends here
 =================================*/
@@ -188,10 +318,60 @@ header .wrapper {
 /*=================================
   footer styling starts here
 =================================*/ 
+footer .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 90px 0;
+}
 
+.social-links {
+  display: flex;
+  align-items: center;
+  margin: 26px 0;
+}
 
+.social-icons { margin-right: 16px; }
 
+.icon {
+  padding: 4px 13px;
+  border-radius: 50%;
+  position: relative;
+  background-color: var(--white-color);
+  color: var(--background-color);
+  text-indent: -9999px;
+}
 
+.icon::before {
+  position: absolute;
+  font-family: 'Font Awesome 5 Brands';
+  float: right;
+  top: 50%;
+  left: 50%;
+  text-indent: 0;
+  transform: translate(-50%,-50%);
+}
+
+.social-icons:nth-child(1) .icon::before { content: '\f16d'; }
+.social-icons:nth-child(2) .icon::before { content: '\f099'; }
+.social-icons:nth-child(3) .icon::before { content: '\f0e1'; }
+
+.footer-head {
+  font-size: 18px;
+  font-weight: 600;
+  font-style: italic;
+  text-transform: capitalize;
+}
+
+.newsletter-signup {
+  margin-top: 23px;
+  padding: 10px 10%;
+  background-color: var(--white-color);
+  color: var(--background-color);
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
 
 
 
