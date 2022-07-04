@@ -3,7 +3,7 @@
     $works = get_sub_field('work');
     ?>
       <section class="work">
-        <div class="wrapper">
+        <div class="wrapper home-wrapper">
           <ul class="outter-box">
             <?php foreach ($works as $work) { ?>
               <li class="inner-box">

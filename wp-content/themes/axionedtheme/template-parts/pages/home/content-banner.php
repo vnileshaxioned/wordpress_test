@@ -3,8 +3,8 @@
     $video = get_sub_field('banner_video');
     ?>
       <section class="banner">
-        <div class="wrapper">
-          <video width="100%" autoplay loop muted>
+        <div class="wrapper home-wrapper">
+          <video class="banner-video" autoplay loop muted>
             <source src="<?php echo $video['url']; ?>" type="video/mp4">
             Your browser does not support the video tag.
           </video>
