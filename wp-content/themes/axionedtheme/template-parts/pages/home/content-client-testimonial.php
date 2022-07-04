@@ -4,8 +4,8 @@
     ?>
       <section class="client-testimonials">
         <div class="wrapper home-wrapper">
+          <h4 class="client-title">Client testimonials</h4>
           <ul class="client-outter-box">
-            <h4 class="client-title">Client testimonials</h4>
             <?php foreach ($client_testimonials as $client_testimonial) { ?>
               <li class="client-inner-box">
                 <figure>
