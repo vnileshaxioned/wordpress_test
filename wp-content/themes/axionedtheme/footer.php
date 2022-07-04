@@ -1,10 +1,45 @@
-<!--footer section start-->
-    <footer>      
-      <?php wp_footer(); ?>
-    </footer>
-    <!--footer section end-->
-
-  </div>
-  <!--container end-->
+      <!--footer section start-->
+      <footer>
+        <div class="wrapper">
+          <div class="left-footer">
+            <?php
+              $custom_logo = get_theme_mod( 'custom_logo' );
+              $logo = wp_get_attachment_image_src( $custom_logo, 'full' );
+              $blog_name = get_bloginfo('name');
+              $blog_url = get_bloginfo('url');
+            ?>
+            <h6><a href="<?php echo $blog_url; ?>" class="axioned-logo" title="<?php echo $blog_name; ?>"><img src="<?php echo $logo[0]; ?>" class="axioned-logo-img" alt="<?php echo $blog_name; ?>"><?php echo $blog_name; ?></a></h6>
+            <ul class="social-links">
+              <li class="social-icons"><a href="#FIXME" class="icon" title="instagram">instagram</a></li>
+              <li class="social-icons"><a href="#FIXME" class="icon" title="twitter">twitter</a></li>
+              <li class="social-icons"><a href="#FIXME" class="icon" title="linkedin">linkedin</a></li>
+            </ul>
+            <h6 class="footer-head">We're hiring</h6>
+            <div class="signup">
+              <a href="#FIXME" class="newsletter-signup" title="Newsletter sign-up">Newsletter sign-up</a>
+            </div>
+          </div>
+          <div class="right-footer">
+            <?php wp_nav_menu( array(
+              'theme_location' => 'secondary',
+              'menu_class' => 'navbar',
+              'container' => 'nav',
+              'container_class' => 'menu',
+              'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+            ) ); ?>
+            <div class="site-info">
+              <figure>
+                <img src="https://dummyimage.com/130x40/000/fff.jpg" alt="Agency Partner">
+              </figure>
+              <a href="#FIXME" class="site-health" title="Microsoft BI Site Health">Microsoft BI Site Health</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--footer section end-->
+      
+    </div>
+    <!--container end-->
+  <?php wp_footer(); ?>
 </body>
 </html>

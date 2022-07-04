@@ -11,7 +11,8 @@ function test_theme_setup() {
   add_theme_support( 'post-thumbnails' );
   add_theme_support( 'custom-logo' );
   register_nav_menus( array(
-    'primary' => __('Primary Menu', 'axionedtheme')
+    'primary' => __('Primary Menu', 'axionedtheme'),
+    'secondary' => __('Secondary Menu', 'axionedtheme')
   ) );
 }
 
