@@ -13,7 +13,13 @@
     <!--header section start-->
     <header>
       <div class="wrapper">
-        <h1><a href="<?php bloginfo('url') ?>" class="axioned-logo" title="Axioned logo"><img src="https://dummyimage.com/159x58/000/fff.jpg" class="axioned-logo-img" alt="Axioned Logo">Axioned logo</a></h1>
+        <?php
+          $custom_logo = get_theme_mod( 'custom_logo' );
+          $logo = wp_get_attachment_image_src( $custom_logo, 'full' );
+          $blog_name = get_bloginfo('name');
+          $blog_url = get_bloginfo('url');
+        ?>
+        <h1><a href="<?php echo $blog_url; ?>" class="axioned-logo" title="<?php echo $blog_name; ?>"><img src="<?php echo $logo[0]; ?>" class="axioned-logo-img" alt="<?php echo $blog_name; ?>"><?php echo $blog_name; ?></a></h1>
         <?php wp_nav_menu( array(
           'theme_location' => 'primary',
           'menu_class' => 'navbar',
