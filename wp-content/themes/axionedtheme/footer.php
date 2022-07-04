@@ -10,11 +10,11 @@
             ?>
             <h6><a href="<?php echo $blog_url; ?>" class="axioned-logo" title="<?php echo $blog_name; ?>"><img src="<?php echo $logo[0]; ?>" class="axioned-logo-img" alt="<?php echo $blog_name; ?>"><?php echo $blog_name; ?></a></h6>
             <ul class="social-links">
-              <li class="social-icons"><a href="#FIXME" class="icon" title="instagram">instagram</a></li>
-              <li class="social-icons"><a href="#FIXME" class="icon" title="twitter">twitter</a></li>
-              <li class="social-icons"><a href="#FIXME" class="icon" title="linkedin">linkedin</a></li>
+              <li class="social-icons"><a href="#FIXME" target="_blank" class="icon" title="instagram">instagram</a></li>
+              <li class="social-icons"><a href="#FIXME" target="_blank" class="icon" title="twitter">twitter</a></li>
+              <li class="social-icons"><a href="#FIXME" target="_blank" class="icon" title="linkedin">linkedin</a></li>
             </ul>
-            <h6 class="footer-head">We're hiring</h6>
+            <h6><a href="#FIXME" class="footer-head" title="We're hiring">We're hiring</a></h6>
             <div class="signup">
               <a href="#FIXME" class="newsletter-signup" title="Newsletter sign-up">Newsletter sign-up</a>
             </div>
