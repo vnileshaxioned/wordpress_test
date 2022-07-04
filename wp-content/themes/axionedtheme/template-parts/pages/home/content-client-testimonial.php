@@ -3,7 +3,7 @@
     $client_testimonials = get_sub_field('client_testimonial');
     ?>
       <section class="client-testimonials">
-        <div class="wrapper">
+        <div class="wrapper home-wrapper">
           <ul class="client-outter-box">
             <?php foreach ($client_testimonials as $client_testimonial) { ?>
               <li class="client-inner-box">
