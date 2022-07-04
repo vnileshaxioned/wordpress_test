@@ -5,13 +5,14 @@
       <section class="client-testimonials">
         <div class="wrapper home-wrapper">
           <ul class="client-outter-box">
+            <h4 class="client-title">Client testimonials</h4>
             <?php foreach ($client_testimonials as $client_testimonial) { ?>
               <li class="client-inner-box">
                 <figure>
                   <img src="<?php echo $client_testimonial['image']['url']; ?>" class="client-image" alt="<?php echo $client_testimonial['image']['alt']; ?>">
                 </figure>
                 <div class="content">
-                  <h3><?php echo $client_testimonial['title'] ?></h3>
+                  <h5 class="client-heading"><?php echo $client_testimonial['title'] ?></h5>
                   <p class="client-paragraph"><?php echo $client_testimonial['description'] ?></p>
                 </div>
               </li>

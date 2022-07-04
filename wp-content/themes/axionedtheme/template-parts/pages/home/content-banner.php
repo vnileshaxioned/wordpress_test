@@ -9,8 +9,8 @@
             Your browser does not support the video tag.
           </video>
           <div class="banner-content">
-            <h2 class="banner-head">it's <span class="pink-color">you</span></h2>
-            <h2 class="banner-head">Vs<span class="pink-color">.</span> the <span class="pink-color">www</span></h2>
+            <h2 class="banner-heading">it's <span class="pink-color">you</span></h2>
+            <h2 class="banner-heading">Vs<span class="pink-color">.</span> the <span class="pink-color">www</span></h2>
           </div>
         </div>
       </section>
