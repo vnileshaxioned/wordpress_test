@@ -222,10 +222,7 @@ header .wrapper {
   flex-direction: column;
 }
 
-.inner-box {
-  position: relative;
-  margin: 15px 0;
-}
+.inner-box { position: relative; }
 .work-link { display: block; }
 
 .work-image {
@@ -322,16 +319,16 @@ footer .wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 90px 0;
+  padding: 80px 0 100px;
 }
 
 .social-links {
   display: flex;
   align-items: center;
-  margin: 26px 0;
+  margin: 25px 0 27px;
 }
 
-.social-icons { margin-right: 16px; }
+.social-icons { margin-right: 14px; }
 
 .icon {
   padding: 4px 13px;
@@ -357,20 +354,36 @@ footer .wrapper {
 .social-icons:nth-child(3) .icon::before { content: '\f0e1'; }
 
 .footer-head {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   font-style: italic;
   text-transform: capitalize;
 }
 
 .newsletter-signup {
-  margin-top: 23px;
-  padding: 10px 10%;
+  margin-top: 25px;
+  padding: 9px 11%;
   background-color: var(--white-color);
   color: var(--background-color);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   text-transform: capitalize;
+}
+
+.left-footer { flex-basis: 23%; }
+.right-footer { flex-basis: 52%; }
+
+.site-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 30px 0;
+}
+
+.site-health {
+  background-color: var(--pink-color);
+  padding: 4px;
+  margin-left: 25px;
 }
 
 
