@@ -29,7 +29,7 @@
             ) ); ?>
             <div class="site-info">
               <figure>
-                <img src="https://dummyimage.com/130x40/000/fff.jpg" alt="Agency Partner">
+                <img src="<?php echo get_template_directory_uri()."/assets/image/download.svg"; ?>" alt="Agency Partner">
               </figure>
               <a href="#FIXME" class="site-health" title="Microsoft BI Site Health">Microsoft BI Site Health</a>
             </div>
