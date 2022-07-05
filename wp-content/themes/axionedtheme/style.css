@@ -184,6 +184,7 @@ header .wrapper {
 /*=================================
   main styling starts here
 =================================*/
+/* home page styling started here */
 /* banner section started here */
 .banner { margin-top: 110px; }
 
@@ -258,7 +259,7 @@ header .wrapper {
 
 .client-title {
   margin: 48px 8.7% 0;
-  font-size: 37px;
+  font-size: 35px;
   text-transform: capitalize;
   background-color: var(--pink-color);
   display: inline-block;
@@ -270,14 +271,14 @@ header .wrapper {
 .client-outter-box {
   display: flex;
   justify-content: space-between;
-  width: 77%;
+  width: 78.5%;
   margin: 0 auto;
-  padding: 50px 0;
+  padding: 46px 0 50px;
 }
 
 .client-inner-box {
-  flex-basis: 41%;
-  height: 490px;
+  flex-basis: 40.8%;
+  height: 424px;
   background-color: #fff;
   box-shadow: 0 0 10px #0000001f;
   padding: 33px;
@@ -288,7 +289,7 @@ header .wrapper {
   margin: 0 auto;
 }
 
-.client-testimonials .content { margin-top: 48px; }
+.client-testimonials .content { margin-top: 44px; }
 
 .client-heading {
   font-size: 20px;
@@ -298,16 +299,123 @@ header .wrapper {
 }
 
 .client-paragraph {
-  margin-top: 32px;
+  margin-top: 34px;
   font-size: 16px;
   line-height: 1.4;
   color: #706989;
   letter-spacing: 1px;
 }
-
-
-
 /* client testimonial section ended here */
+/* home page styling ended here */
+
+
+/* work page styling started here */
+/* our work section started here */
+.works { margin: 110px 0 0; }
+.works .wrapper { padding-bottom: 0; }
+
+
+
+.work-wrapper {
+  width: 97%;
+  position: relative;
+  background-color: var(--white-color);
+  padding: 17px 0;
+}
+
+.work-title {
+  margin: 47px 6% 0;
+  font-size: 37px;
+  text-transform: capitalize;
+  background-color: var(--pink-color);
+  display: inline-block;
+  color: var(--background-color);
+  font-weight: bold;
+  line-height: .8;
+}
+
+.our-work {
+  margin: 45px 6% 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.work-list {
+  flex-basis: 32.5%;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.work-list img {
+  object-fit: cover;
+  height: 357px;
+}
+
+.work-list a { font-size: 0; }
+
+.work-list .content {
+  position: absolute;
+  bottom: 20px;
+  left: 9%;
+}
+
+.work-list .work-heading {
+  color: var(--background-color);
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.work-list .work-paragraph {
+  font-size: 16px;
+  color: var(--background-color);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+/* our work section started here */
+
+/* slider section started here */
+.client-slider {
+  margin: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list {
+  flex-basis: 16.7%;
+  padding: 0 13px;
+}
+
+.slider-action {
+  width: 100%;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.next-button,
+.previous-button {
+  color: #000;
+  text-indent: -9999px;
+}
+
+.next-button::before,
+.previous-button::before {
+  font-family: 'FontAwesome';
+  float: right;
+  text-indent: 0;
+}
+
+.previous-button::before { content: '\f104'; }
+.next-button::before { content: '\f054'; }
+/* slider section end */
+/* work page styling ended here */
 /*=================================
   main styling ends here
 =================================*/
@@ -377,13 +485,33 @@ footer .wrapper {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin: 30px 0;
+  margin: 21px 0 54px;
 }
 
 .site-health {
   background-color: var(--pink-color);
-  padding: 4px;
+  padding: 6px 8px;
+  font-size: 14px;
   margin-left: 25px;
+}
+
+.site-health::after {
+  content: '';
+  margin-left: 50px;
+  border-left: 1px solid #fff;
+}
+
+.site-info figure {
+  flex-basis: 20.5%;
+  padding-right: 10px;
+  border-right: 2px solid #fff;
+}
+
+.site-health {
+  padding: 6px 8px;
+  margin-left: 10px;
+  background-color: var(--pink-color);
+  font-size: 14px;
 }
 
 
