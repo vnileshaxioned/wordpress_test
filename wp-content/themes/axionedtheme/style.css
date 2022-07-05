@@ -416,6 +416,32 @@ header .wrapper {
 .next-button::before { content: '\f054'; }
 /* slider section end */
 /* work page styling ended here */
+
+/* contact page */
+main { margin: 110px 0 0; }
+
+.section-wrapper {
+  width: 97%;
+  background-color: #fff;
+}
+
+.contact-us-heading {
+  margin: 47px 5%;
+  font-size: 37px;
+  text-transform: capitalize;
+  background-color: var(--pink-color);
+  display: inline-block;
+  color: var(--background-color);
+  font-weight: bold;
+  line-height: .8;
+}
+
+.contact-outter-box {
+  margin: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 /*=================================
   main styling ends here
 =================================*/
