@@ -1,6 +1,6 @@
 <?php if (get_row_layout() == 'services_and_capabilities_section') { ?>
   <section class="capabilities">
-    <div class="wrapper">
+    <div class="wrapper services-wrapper">
       <h2 class="service-heading">Services & Capabilities</h2>
       <ul class="service-outter-box">
         <li class="service-list">
