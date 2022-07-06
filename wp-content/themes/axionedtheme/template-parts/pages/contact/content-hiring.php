@@ -4,7 +4,7 @@
   ?>
   <section class="hiring">
     <div class="wrapper section-wrapper">
-      <h6 class="hiring-heading"><?php echo $title; ?></h6>
+      <?php echo $title; ?>
     </div>
   </section>
 <?php } ?>
