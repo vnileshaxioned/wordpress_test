@@ -523,6 +523,162 @@ main { margin: 110px 0 0; }
 }
 /* hiring section started here */
 /* contact page ended here */
+
+/* services page started here */
+/* service section started here */
+.services-wrapper {
+  width: 97%;
+  background-color: #F5F5F5;
+}
+
+.service-heading {
+  margin: 66px 9.7% 0;
+  font-size: 36px;
+  text-transform: capitalize;
+  background-color: var(--pink-color);
+  display: inline-block;
+  color: var(--background-color);
+  font-weight: bold;
+  line-height: .8;
+}
+
+.service-outter-box {
+  width: 80.6%;
+  margin: 0 auto;
+  padding-top: 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-list {
+  padding-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service-img { flex-basis: 46.5%; }
+.service-content { flex-basis: 46.5%; }
+
+.service-title {
+  margin: 4px 0 27px;
+  font-size: 26px;
+  text-transform: capitalize;
+  background-color: var(--pink-color);
+  display: inline-block;
+  color: var(--background-color);
+  font-weight: bold;
+  line-height: .8;
+}
+
+.service-paragraph {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #272047;
+  letter-spacing: 1px;
+}
+/* service section ended here */
+
+/* team axioned section started here */
+.team_axioned .wrapper { background-color: #fff; }
+
+.team-heading {
+  margin: 66px 9.7% 0;
+  font-size: 36px;
+  text-transform: capitalize;
+  background-color: var(--pink-color);
+  display: inline-block;
+  color: var(--background-color);
+  font-weight: bold;
+  line-height: .8;
+}
+
+.team-outter-box {
+  margin: 0 9.7%;
+  display: flex;
+  padding: 44px 0 60px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.team-list {
+  height: 458px;
+  box-shadow: 0 0 10px #0000001f;
+  flex-basis: 31.3%;
+}
+
+.team-content {
+  padding: 22px 26px;
+  color: var(--background-color);
+}
+
+.team-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.team-paragraph {
+  margin-top: 22px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.team-content-box { margin-top: 6px; }
+
+.team-content-list {
+  display: list-item;
+  list-style: disc;
+  padding: 2px 0;
+  margin-left: 18px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+/* team axioned section ended here */
+
+/* tools section started here */
+.tools-heading {
+  margin: 66px 9.7% 0;
+  font-size: 36px;
+  text-transform: capitalize;
+  background-color: var(--pink-color);
+  display: inline-block;
+  color: var(--background-color);
+  font-weight: bold;
+  line-height: .8;
+}
+
+.tools-outter-box {
+  margin: 26px 9.7% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-name {
+  color: gray;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 13px;
+}
+
+.tools-image-box { margin: 0 9.7%; }
+
+.tools-image-box {
+  margin: 0 9.7%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tools-image-list {
+  flex-basis: 13.3%;
+  margin-right: 33px;
+}
+
+.image-list { padding: 40px; }
+/* tools section ended here */
+/* services page ended here */
 /*=================================
   main styling ends here
 =================================*/
