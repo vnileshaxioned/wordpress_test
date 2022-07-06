@@ -5,7 +5,7 @@
   ?>
   <section class="contact-us">
     <div class="wrapper section-wrapper">
-      <h2 class="contact-us-heading">Contact Us</h2>
+      <h2 class="contact-us-heading"><?php echo $title; ?></h2>
       <ul class="contact-outter-box">
         <?php
           foreach ($contents as $content) {
