@@ -1,6 +1,6 @@
 <?php if (get_row_layout() == 'tools_and_technologies_section') { ?>
   <section class="tools">
-    <div class="wrapper">
+    <div class="wrapper services-wrapper">
       <h2 class="tools-heading">Team Axioned: Remote, Global Coverage</h2>
       <ul class="tools-outter-box">
         <li class="tools-list"><a href="#FIXME" class="list-name" data-tab-name="All" title="All">All</a></li>

@@ -1,6 +1,6 @@
 <?php if (get_row_layout() == 'team_axioned_section') { ?>
   <section class="team_axioned">
-    <div class="wrapper">
+    <div class="wrapper services-wrapper">
       <h2 class="team-heading">Team Axioned: Remote, Global Coverage</h2>
       <ul class="team-outter-box">
         <li class="team-list">
