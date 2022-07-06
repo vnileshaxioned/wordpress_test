@@ -7,25 +7,31 @@
           <figure>
             <img src="https://dummyimage.com/370x140/000/fff.jpg" alt="image">
           </figure>
-          <h3 class="contact-head">Greater NY & USA.</h3>
-          <p class="contact-address">833 Broadway New York, NY</p>
-          <p class="tel-number"><a href="tel:+1 917 275 7105" title="+1 917 275 7105">T: +1 917 275 7105</a></p>
+          <div class="contact-content">
+            <h3 class="contact-head">Greater NY & USA.</h3>
+            <p class="contact-address">833 Broadway New York, NY</p>
+            <p class="tel-number"><a href="tel:+1 917 275 7105" title="+1 917 275 7105">T: +1 917 275 7105</a></p>
+          </div>
         </li>
         <li class="contact-list">
           <figure>
             <img src="https://dummyimage.com/370x140/000/fff.jpg" alt="image">
           </figure>
-          <h3 class="contact-head">Greater NY & USA.</h3>
-          <p class="contact-address">833 Broadway New York, NY</p>
-          <p class="tel-number"><a href="tel:+1 917 275 7105" title="+1 917 275 7105">T: +1 917 275 7105</a></p>
+          <div class="contact-content">
+            <h3 class="contact-head">Greater NY & USA.</h3>
+            <p class="contact-address">833 Broadway New York, NY</p>
+            <p class="tel-number"><a href="tel:+1 917 275 7105" title="+1 917 275 7105">T: +1 917 275 7105</a></p>
+          </div>
         </li>
         <li class="contact-list">
           <figure>
             <img src="https://dummyimage.com/370x140/000/fff.jpg" alt="image">
           </figure>
-          <h3 class="contact-head">Greater NY & USA.</h3>
-          <p class="contact-address">833 Broadway New York, NY</p>
-          <p class="tel-number"><a href="tel:+1 917 275 7105" title="+1 917 275 7105">T: +1 917 275 7105</a></p>
+          <div class="contact-content">
+            <h3 class="contact-head">Greater NY & USA.</h3>
+            <p class="contact-address">833 Broadway New York, NY</p>
+            <p class="tel-number"><a href="tel:+1 917 275 7105" title="+1 917 275 7105">T: +1 917 275 7105</a></p>
+          </div>
         </li>
       </ul>
     </div>
