@@ -11,6 +11,7 @@
         ?>
           <?php get_template_part('template-parts/pages/contact/content', 'contact-us'); ?>
           <?php get_template_part('template-parts/pages/contact/content', 'lets-chat'); ?>
+          <?php get_template_part('template-parts/pages/contact/content', 'hiring'); ?>
         <?php
       }
     }
