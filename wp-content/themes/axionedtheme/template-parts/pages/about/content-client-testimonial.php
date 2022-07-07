@@ -1,30 +1,34 @@
+<?php
+  $background_image = get_sub_field('background_image');
+  $image_url = $background_image['url'];
+  $image_alt = $background_image['alt'];
+  $title = get_sub_field('section_title');
+  $client_testimonials = get_sub_field('client_testimonial');
+?>
 <section class="client-testimonials">
-    <div class="wrapper inner-wrapper">
-      <figure class="section-background-image">
-        <img src="https://dummyimage.com/1247x572/000/fff.jpg" alt="image">
-      </figure>
-      <div class="client-content">
-        <h4 class="client-title">Client testimonials</h4>
-        <ul class="client-outter-box">
+  <div class="wrapper inner-wrapper">
+    <figure class="section-background-image">
+      <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>">
+    </figure>
+    <div class="client-content">
+      <h4 class="client-title"><?php echo $title; ?></h4>
+      <ul class="client-outter-box">
+        <?php 
+          foreach ($client_testimonials as $client_testimonial) {
+            $image = $client_testimonial['image']['url'];
+            $image_alt = $client_testimonial['image']['alt'];
+          ?>
           <li class="client-inner-box">
             <figure>
-              <img src="https://dummyimage.com/200x55/000/fff.jpg" class="client-image" alt="Image">
+              <img src="<?php //echo $; ?>" class="client-image" alt="<?php //echo $; ?>">
             </figure>
             <div class="content">
-              <h5 class="client-heading">Shutterstock</h5>
-              <p class="client-paragraph">"The Axioned team fully met our expectations. They were proactive, very patient, communicative & organized in terms of the deliverables and timeline. They also accommodated our last-minute changes. The overall process working with the team was smooth, enjoyable & GREAT! You guys consistently do a great job!"</p>
+              <h5 class="client-heading"><?php //echo $; ?></h5>
+              <p class="client-paragraph"><?php //echo $; ?></p>
             </div>
           </li>
-          <li class="client-inner-box">
-            <figure>
-              <img src="https://dummyimage.com/200x55/000/fff.jpg" class="client-image" alt="Image">
-            </figure>
-            <div class="content">
-              <h5 class="client-heading">Pioneer Academics</h5>
-              <p class="client-paragraph">"The team is great to work with. They are diligent, knowledegeable, attentive to detail & are always open to feedback. We appreciate their dedication. They make sure that tasks are completed on time and are quick in understanding client requirements. Axioned and the team are great. We enjoy working with them!"</p>
-            </div>
-          </li>
-        </ul>
-      </div>
+        <?php } ?>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>
