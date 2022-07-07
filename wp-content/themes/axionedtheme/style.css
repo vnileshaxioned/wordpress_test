@@ -558,8 +558,8 @@ main { margin: 110px 0 0; }
   justify-content: space-between;
 }
 
-.service-img { flex-basis: 46.5%; }
-.service-content { flex-basis: 46.5%; }
+.service-img { flex-basis: 46.8%; }
+.service-content { flex-basis: 46.8%; }
 
 .service-title {
   margin: 4px 0 27px;
@@ -666,6 +666,7 @@ main { margin: 110px 0 0; }
 
 .tools-image-box {
   margin: 0 9.7%;
+  padding-bottom: 30px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -675,8 +676,6 @@ main { margin: 110px 0 0; }
   flex-basis: 13.3%;
   margin-right: 33px;
 }
-
-.image-list { padding: 40px; }
 /* tools section ended here */
 /* services page ended here */
 /*=================================
