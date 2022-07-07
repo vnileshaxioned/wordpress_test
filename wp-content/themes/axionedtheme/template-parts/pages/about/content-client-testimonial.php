@@ -3,7 +3,7 @@
       <figure class="section-background-image">
         <img src="https://dummyimage.com/1247x572/000/fff.jpg" alt="image">
       </figure>
-      <div class="about-content">
+      <div class="client-content">
         <h4 class="client-title">Client testimonials</h4>
         <ul class="client-outter-box">
           <li class="client-inner-box">
