@@ -1,50 +1,40 @@
+<?php
+  $background_image = get_sub_field('background_image');
+  $image_url = $background_image['url'];
+  $image_alt = $background_image['alt'];
+  $title = get_sub_field('section_title');
+  $contents = get_sub_field('section_content');
+?>
 <section class="global-team">
   <div class="wrapper inner-wrapper">
     <figure class="section-background-image">
-      <img src="https://dummyimage.com/1247x572/7A7873/fff.jpg" alt="image">
+      <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>">
     </figure>
     <div class="global-content">
-			<h3 class="about-heading">Our Remote & Global Team</h3>
+			<h3 class="about-heading"><?php echo $title; ?></h3>
 			<ul class="global-inner-content">
-				<li class="global-list">
-					<figure>
-						<img src="https://dummyimage.com/48x48/000/fff.jpg" alt="Image">
-					</figure>
-					<h4 class="global-list-heading">Greater-NY <span>(EST)</span></h4>
-					<ul class="global-list-content">
-						<li class="global-inner-list">UX/UI Design</li>
-						<li class="global-inner-list">Project Management</li>
-						<li class="global-inner-list">Digital Transformation</li>
-						<li class="global-inner-list">Front-End Dev</li>
-						<li class="global-inner-list">Back-End Dev</li>
-					</ul>
-				</li>
-				<li class="global-list">
-					<figure>
-						<img src="https://dummyimage.com/48x48/000/fff.jpg" alt="Image">
-					</figure>
-					<h4 class="global-list-heading">Greater-NY <span>(EST)</span></h4>
-					<ul class="global-list-content">
-						<li class="global-inner-list">UX/UI Design</li>
-						<li class="global-inner-list">Project Management</li>
-						<li class="global-inner-list">Digital Transformation</li>
-						<li class="global-inner-list">Front-End Dev</li>
-						<li class="global-inner-list">Back-End Dev</li>
-					</ul>
-				</li>
-				<li class="global-list">
-					<figure>
-						<img src="https://dummyimage.com/48x48/000/fff.jpg" alt="Image">
-					</figure>
-					<h4 class="global-list-heading">Greater-NY <span>(EST)</span></h4>
-					<ul class="global-list-content">
-						<li class="global-inner-list">UX/UI Design</li>
-						<li class="global-inner-list">Project Management</li>
-						<li class="global-inner-list">Digital Transformation</li>
-						<li class="global-inner-list">Front-End Dev</li>
-						<li class="global-inner-list">Back-End Dev</li>
-					</ul>
-				</li>
+				<?php
+          foreach ($contents as $content) {
+						$image = $content['content_image']['url'];
+						$image_alt = $content['content_image']['alt'];
+						$heading = $content['content_title'];
+						$all_list = $content['content_list'];
+          ?>
+					<li class="global-list">
+						<figure>
+							<img src="<?php echo $image; ?>" alt="<?php echo $image_alt; ?>">
+						</figure>
+						<h4 class="global-list-heading"><?php echo $heading; ?></h4>
+						<ul class="global-list-content">
+							<?php
+								foreach ($all_list as $lists) {
+									$single_list = $lists['list'];
+								?>
+								<li class="global-inner-list"><?php echo $single_list; ?></li>
+							<?php } ?>
+						</ul>
+					</li>
+				<?php } ?>
 			</ul>
 		</div>
   </div>
