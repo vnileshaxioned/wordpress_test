@@ -1,5 +1,5 @@
 <section class="client-testimonials">
-    <div class="wrapper home-wrapper">
+    <div class="wrapper inner-wrapper">
       <figure class="section-background-image">
         <img src="https://dummyimage.com/1247x572/000/fff.jpg" alt="image">
       </figure>
