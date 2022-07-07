@@ -149,11 +149,11 @@ a { color: var(--white-color); }
   Header styling starts here
 =================================*/
 header {
-  position: fixed;
-  z-index: 1;
-  top: 0;
   width: 100%;
+  position: fixed;
+  top: 0;
   background-color: var(--background-color);
+  z-index: 1;
 }
 
 header .wrapper {
@@ -196,11 +196,11 @@ header .wrapper {
 
 .banner-content {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   position: absolute;
   top: 48%;
   left: 9%;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .banner-content h2 {
@@ -253,35 +253,35 @@ header .wrapper {
 
 /* client testimonial section started here */
 .client-testimonials .wrapper {
-  background-color: #F5F5F5;
   padding: 20px 0;
+  background-color: #F5F5F5;
 }
 
 .client-title {
   margin: 48px 8.7% 0;
-  font-size: 35px;
-  text-transform: capitalize;
-  background-color: var(--pink-color);
   display: inline-block;
+  background-color: var(--pink-color);
   color: var(--background-color);
+  font-size: 35px;
   font-weight: bold;
   line-height: .8;
+  text-transform: capitalize;
 }
 
 .client-outter-box {
+  width: 78.5%;
+  padding: 46px 0 50px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  width: 78.5%;
-  margin: 0 auto;
-  padding: 46px 0 50px;
 }
 
 .client-inner-box {
-  flex-basis: 40.8%;
   height: 424px;
+  padding: 33px;
   background-color: #fff;
   box-shadow: 0 0 10px #0000001f;
-  padding: 33px;
+  flex-basis: 40.8%;
 }
 
 .client-inner-box figure {
@@ -292,73 +292,70 @@ header .wrapper {
 .client-testimonials .content { margin-top: 44px; }
 
 .client-heading {
-  font-size: 20px;
-  text-align: center;
   color: var(--background-color);
+  font-size: 20px;
   font-weight: 600;
+  text-align: center;
 }
 
 .client-paragraph {
   margin-top: 34px;
-  font-size: 16px;
-  line-height: 1.4;
   color: #706989;
+  font-size: 16px;
   letter-spacing: 1px;
+  line-height: 1.4;
 }
 /* client testimonial section ended here */
 /* home page styling ended here */
-
 
 /* work page styling started here */
 /* our work section started here */
 .works { margin: 110px 0 0; }
 .works .wrapper { padding-bottom: 0; }
 
-
-
 .work-wrapper {
   width: 97%;
+  padding: 17px 0;
   position: relative;
   background-color: var(--white-color);
-  padding: 17px 0;
 }
 
 .work-title {
   margin: 47px 6% 0;
-  font-size: 37px;
-  text-transform: capitalize;
-  background-color: var(--pink-color);
   display: inline-block;
+  background-color: var(--pink-color);
   color: var(--background-color);
+  font-size: 37px;
   font-weight: bold;
   line-height: .8;
+  text-transform: capitalize;
 }
 
 .our-work {
   margin: 45px 6% 0;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .work-list {
-  flex-basis: 32.5%;
-  position: relative;
   margin-bottom: 15px;
+  position: relative;
+  flex-basis: 32.5%;
 }
 
 .work-list img {
-  object-fit: cover;
   height: 357px;
+  object-fit: cover;
 }
 
 .work-list a { font-size: 0; }
 
 .work-list .content {
   position: absolute;
-  bottom: 20px;
   left: 9%;
+  bottom: 20px;
 }
 
 .work-list .work-heading {
@@ -368,10 +365,10 @@ header .wrapper {
 }
 
 .work-list .work-paragraph {
-  font-size: 16px;
-  color: var(--background-color);
-  line-height: 1.5;
   margin-top: 4px;
+  color: var(--background-color);
+  font-size: 16px;
+  line-height: 1.5;
 }
 /* our work section started here */
 
@@ -379,13 +376,13 @@ header .wrapper {
 .client-slider {
   margin: 40px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .list {
-  flex-basis: 16.7%;
   padding: 0 13px;
+  flex-basis: 16.7%;
 }
 
 .slider-action {
@@ -428,18 +425,18 @@ main { margin: 110px 0 0; }
 
 .contact-us-heading {
   margin: 53px 5% 36px;
-  font-size: 36px;
-  text-transform: capitalize;
-  background-color: var(--pink-color);
   display: inline-block;
+  background-color: var(--pink-color);
   color: var(--background-color);
+  font-size: 36px;
   font-weight: bold;
   line-height: .8;
+  text-transform: capitalize;
 }
 
 .contact-outter-box {
-  margin: 0 5%;
   padding-bottom: 60px;
+  margin: 0 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -463,14 +460,14 @@ main { margin: 110px 0 0; }
 }
 
 .tel-number a {
-  color: var(--background-color);
   margin: 12px 2% 0;
+  color: var(--background-color);
 }
 
 .contact-list {
   height: 312px;
-  flex-basis: 31.3%;
   box-shadow: 0 0 10px #0000001f;
+  flex-basis: 31.3%;
 }
 /* contact us section ended here */
 
@@ -480,18 +477,18 @@ main { margin: 110px 0 0; }
 .chat-list {
   margin-top: 10px;
   display: flex;
+  background-color: #fff;
   align-items: center;
+  box-shadow: 0 0 10px #0000001f;
   flex-basis: 31.3%;
   justify-content: flex-start;
-  background-color: #fff;
-  box-shadow: 0 0 10px #0000001f;
 }
 
 .chat-list figure { flex-basis: 29%; }
 
 .chat-list img {
-  object-fit: cover;
   height: 114px;
+  object-fit: cover;
 }
 
 .chat-content {
@@ -516,10 +513,10 @@ main { margin: 110px 0 0; }
 /* hiring section started here */
 .hiring h6 {
   padding: 44px 0;
-  text-align: center;
+  color: var(--background-color);
   font-size: 23px;
   font-weight: 600;
-  color: var(--background-color);
+  text-align: center;
 }
 /* hiring section started here */
 /* contact page ended here */
@@ -533,22 +530,22 @@ main { margin: 110px 0 0; }
 
 .service-heading {
   margin: 66px 9.7% 0;
-  font-size: 36px;
-  text-transform: capitalize;
-  background-color: var(--pink-color);
   display: inline-block;
+  background-color: var(--pink-color);
   color: var(--background-color);
+  font-size: 36px;
   font-weight: bold;
   line-height: .8;
+  text-transform: capitalize;
 }
 
 .service-outter-box {
   width: 80.6%;
-  margin: 0 auto;
   padding-top: 46px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
 }
 
 .service-list {
@@ -563,20 +560,20 @@ main { margin: 110px 0 0; }
 
 .service-title {
   margin: 4px 0 27px;
-  font-size: 26px;
-  text-transform: capitalize;
-  background-color: var(--pink-color);
   display: inline-block;
+  background-color: var(--pink-color);
   color: var(--background-color);
+  font-size: 26px;
   font-weight: bold;
   line-height: .8;
+  text-transform: capitalize;
 }
 
 .service-paragraph {
-  font-size: 16px;
-  line-height: 1.6;
   color: #272047;
+  font-size: 16px;
   letter-spacing: 1px;
+  line-height: 1.6;
 }
 /* service section ended here */
 
@@ -585,19 +582,19 @@ main { margin: 110px 0 0; }
 
 .team-heading {
   margin: 66px 9.7% 0;
-  font-size: 36px;
-  text-transform: capitalize;
-  background-color: var(--pink-color);
   display: inline-block;
+  background-color: var(--pink-color);
   color: var(--background-color);
+  font-size: 36px;
   font-weight: bold;
   line-height: .8;
+  text-transform: capitalize;
 }
 
 .team-outter-box {
+  padding: 44px 0 60px;
   margin: 0 9.7%;
   display: flex;
-  padding: 44px 0 60px;
   align-items: center;
   justify-content: space-between;
 }
@@ -627,25 +624,25 @@ main { margin: 110px 0 0; }
 .team-content-box { margin-top: 6px; }
 
 .team-content-list {
-  display: list-item;
-  list-style: disc;
   padding: 2px 0;
   margin-left: 18px;
+  display: list-item;
   font-size: 18px;
   line-height: 1.5;
+  list-style: disc;
 }
 /* team axioned section ended here */
 
 /* tools section started here */
 .tools-heading {
   margin: 66px 9.7% 0;
-  font-size: 36px;
-  text-transform: capitalize;
-  background-color: var(--pink-color);
   display: inline-block;
+  background-color: var(--pink-color);
   color: var(--background-color);
+  font-size: 36px;
   font-weight: bold;
   line-height: .8;
+  text-transform: capitalize;
 }
 
 .tools-outter-box {
@@ -656,28 +653,119 @@ main { margin: 110px 0 0; }
 }
 
 .list-name {
+  padding: 13px;
   color: gray;
   font-size: 22px;
   font-weight: 600;
-  padding: 13px;
 }
 
 .tools-image-box { margin: 0 9.7%; }
 
 .tools-image-box {
-  margin: 0 9.7%;
   padding-bottom: 30px;
+  margin: 0 9.7%;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .tools-image-list {
-  flex-basis: 13.3%;
   margin-right: 33px;
+  flex-basis: 13.3%;
 }
 /* tools section ended here */
 /* services page ended here */
+
+/* about page started here */
+/* about section started here */
+.inner-wrapper {
+  width: 97%;
+  position: relative;
+}
+
+.about-content {
+  width: 40%;
+  position: absolute;
+  top: 88px;
+  left: 10%;
+  color: #fff;
+}
+
+.about-heading {
+  margin-bottom: 14px;
+  display: inline-block;
+  background-color: var(--pink-color);
+  color: var(--background-color);
+  font-size: 35px;
+  font-weight: bold;
+  line-height: .8;
+  text-transform: capitalize;
+}
+
+.about-paragraph {
+  margin: 16px 0;
+  font-size: 16px;
+  letter-spacing: .7px;
+  line-height: 1.6;
+}
+/* about section ended here */
+
+/* global team section started here */
+.global-content {
+  width: 80%;
+  position: absolute;
+  top: 62px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.global-inner-content {
+  margin-top: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.global-list {
+  height: 286px;
+  padding: 32px;
+  background-color: #fff;
+  flex-basis: 25.2%;
+}
+
+.global-list figure { width: 48px; }
+
+.global-list-heading {
+  margin: 24px 0;
+  color: var(--background-color);
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.global-list-content { margin-left: 16px; }
+
+.global-inner-list {
+  margin: 14px 0px;
+  display: list-item;
+  color: var(--background-color);
+  font-size: 16px;
+  list-style-type: disc;
+}
+/* global team section ended here */
+
+/* client testimonial section started here */
+.client-testimonials .inner-wrapper { padding: 0; }
+.client-content .client-title { margin-top: 78px; }
+
+.client-content {
+  width: 97.5%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* client testimonial section ended here */
+/* about page ended here */
 /*=================================
   main styling ends here
 =================================*/
