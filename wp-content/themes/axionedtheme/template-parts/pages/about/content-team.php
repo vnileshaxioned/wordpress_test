@@ -5,7 +5,7 @@
     </figure>
     <div class="global-content">
 			<h3 class="about-heading">Our Remote & Global Team</h3>
-			<ul class="global-content">
+			<ul class="global-inner-content">
 				<li class="global-list">
 					<figure>
 						<img src="https://dummyimage.com/48x48/000/fff.jpg" alt="Image">
