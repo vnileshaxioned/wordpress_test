@@ -1,16 +1,15 @@
 <?php
   if (get_row_layout() == 'work_section') {
-    $works = get_sub_field('work');
+    $works = get_sub_field('work_content');
   ?>
   <section class="work">
     <div class="wrapper home-wrapper">
       <ul class="outter-box">
         <?php
           foreach ($works as $work) {
-            $work_content = $work['work_content'];
-            $post_id = $work_content->ID;
-            $title = $work_content->post_title;
-            $excerpt = $work_content->post_excerpt;
+            $post_id = $work->ID;
+            $title = $work->post_title;
+            $excerpt = $work->post_excerpt;
             $image = get_field('image', $post_id);
           ?>
           <li class="inner-box">
