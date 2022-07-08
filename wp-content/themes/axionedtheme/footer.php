@@ -40,7 +40,11 @@
               <figure>
                 <img src="<?php echo get_template_directory_uri()."/assets/image/download.svg"; ?>" alt="Agency Partner">
               </figure>
-              <a href="#FIXME" class="site-health" title="Microsoft BI Site Health">Microsoft BI Site Health</a>
+              <a href="#FIXME" class="site-health" title="Microsoft BI Site Health">Microsoft BI Site Health
+                <figure class="gear-icon">
+                  <img src="<?php echo get_template_directory_uri()."/assets/image/footer-microsoft-button.png"; ?>" alt="">
+                </figure>
+              </a>
             </div>
           </div>
         </div>
