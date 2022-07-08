@@ -1,3 +1,6 @@
+      </main>
+      <!--main section end-->
+      
       <!--footer section start-->
       <footer>
         <div class="wrapper">

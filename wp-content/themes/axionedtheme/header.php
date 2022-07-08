@@ -30,3 +30,6 @@
       </div>
     </header>
     <!--header section start-->
+    
+    <!--main section start-->
+    <main>
