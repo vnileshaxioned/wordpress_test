@@ -2,8 +2,7 @@
 /* Template Name: Services */
 
   get_header();
-?>
-<?php
+
   if (have_rows('services_page')) {
     while (have_rows('services_page')) {
       the_row();
@@ -21,5 +20,5 @@
       }
     }
   }
+  get_footer();
 ?>
-<?php get_footer(); ?>
