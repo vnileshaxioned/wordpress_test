@@ -2,22 +2,27 @@
   $background_image = get_sub_field('background_image');
   $title = get_sub_field('section_title');
   $paragraph = get_sub_field('paragraph');
-  $image_url = $background_image['url'];
-  $image_alt = $background_image['alt'];
+  $image_url = $background_image['url'] ? $background_image['url'] : null;
+  $image_alt = $background_image['alt'] ? $background_image['alt'] : $title;
 
-  if ($image_url != '') {
+  if ($image_url || $title || $paragraph) {
   ?>
   <section class="about">
     <div class="wrapper inner-wrapper">
-      <figure class="section-background-image">
-        <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt ? $image_alt : $title; ?>">
-      </figure>
-      <div class="about-content">
-        <h2 class="about-heading"><?php echo $title ? $title : "Title goes here"; ?></h2>
-        <div class="wysiwyg-editor">
-          <?php echo $paragraph ? $paragraph : "Pragraph goes here"; ?>
+      <?php if ($image_url) { ?>
+        <figure class="section-background-image">
+          <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>">
+        </figure>
+      <?php }
+        if ($title || $paragraph) {
+        ?>
+        <div class="about-content">
+          <?php
+            echo $title ? '<h2 class="about-heading">'. $title .'</h2>' : null;
+            echo $paragraph ? '<div class="wysiwyg-editor">'. $paragraph .'</div>' : null;
+          ?>
         </div>
-      </div>
+      <?php } ?>
     </div>
   </section>
 <?php } ?>
