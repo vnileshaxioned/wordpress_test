@@ -16,6 +16,12 @@
               <p class="client-paragraph"><?php echo $client_testimonial['description'] ?></p>
             </div>
           </li>
+          <li class="client-slider-action">
+            <a href="#FIXME" class="client-slider-button previous-slide" title="Previous slide">Previous slide</a>
+          </li>
+          <li class="client-slider-action">
+            <a href="#FIXME" class="client-slider-button next-slide" title="Next slide">Next slide</a>
+          </li>
         <?php } ?>
       </ul>
     </div>
