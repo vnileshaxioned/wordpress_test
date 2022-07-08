@@ -37,7 +37,7 @@
               'items_wrap' => '<ul class="%2$s">%3$s</ul>',
             ) ); ?>
             <div class="site-info">
-              <figure>
+              <figure class="agency-partner">
                 <img src="<?php echo get_template_directory_uri()."/assets/image/download.svg"; ?>" alt="Agency Partner">
               </figure>
               <a href="#FIXME" class="site-health" title="Microsoft BI Site Health">Microsoft BI Site Health
