@@ -1,3 +1,6 @@
+      </main>
+      <!--main section end-->
+
       <!--footer section start-->
       <footer>
         <div class="wrapper">
@@ -8,7 +11,13 @@
               $blog_name = get_bloginfo('name');
               $blog_url = get_bloginfo('url');
             ?>
-            <h6><a href="<?php echo $blog_url; ?>" class="axioned-logo" title="<?php echo $blog_name; ?>"><img src="<?php echo $logo[0]; ?>" class="axioned-logo-img" alt="<?php echo $blog_name; ?>"><?php echo $blog_name; ?></a></h6>
+            <h6>
+              <a href="<?php echo $blog_url; ?>" class="axioned-logo" title="<?php echo $blog_name; ?>">
+                <figure>
+                  <img src="<?php echo $logo[0]; ?>" class="axioned-logo-img" alt="<?php echo $blog_name; ?>">
+                </figure>
+              <?php echo $blog_name; ?></a>
+            </h6>
             <ul class="social-links">
               <li class="social-icons"><a href="#FIXME" target="_blank" class="icon" title="instagram">instagram</a></li>
               <li class="social-icons"><a href="#FIXME" target="_blank" class="icon" title="twitter">twitter</a></li>

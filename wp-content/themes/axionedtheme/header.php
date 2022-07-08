@@ -19,7 +19,13 @@
           $blog_name = get_bloginfo('name');
           $blog_url = get_bloginfo('url');
         ?>
-        <h1><a href="<?php echo $blog_url; ?>" class="axioned-logo" title="<?php echo $blog_name; ?>"><img src="<?php echo $logo[0]; ?>" class="axioned-logo-img" alt="<?php echo $blog_name; ?>"><?php echo $blog_name; ?></a></h1>
+        <h1>
+          <a href="<?php echo $blog_url; ?>" class="axioned-logo" title="<?php echo $blog_name; ?>">
+            <figure>
+              <img src="<?php echo $logo[0]; ?>" class="axioned-logo-img" alt="<?php echo $blog_name; ?>">
+            </figure>
+          <?php echo $blog_name; ?></a>
+        </h1>
         <?php wp_nav_menu( array(
           'theme_location' => 'primary',
           'menu_class' => 'navbar',
@@ -30,3 +36,6 @@
       </div>
     </header>
     <!--header section start-->
+
+    <!--main section start-->
+    <main>
