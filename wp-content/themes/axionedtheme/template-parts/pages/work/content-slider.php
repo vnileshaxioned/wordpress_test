@@ -1,20 +1,29 @@
 <?php
-  if (get_row_layout() == 'work_slider') {
-    $sliders = get_sub_field('slider');
-    ?>
-      <section class="clients">
-        <div class="wrapper work-wrapper">
-          <ul class="client-slider">
-            <?php foreach ($sliders as $slide) { ?>
-              <li class="list">
-                <figure><img src="<?php echo $slide['client_image']['url']; ?>" alt="<?php echo $slide['client_image']['alt']; ?>"></figure>
-              </li>
-            <?php } ?>
-          </ul>
-          <ul class="slider-action">
-            <li class="slider-button"><a href="#FIXME" class="previous-button" title="Previous">Previous</a></li>
-            <li class="slider-button"><a href="#FIXME" class="next-button" title="Next">Next</a></li>
-          </ul>
-        </div>
-      </section>
-    <?php } ?>
+  $sliders = get_sub_field('slider');
+
+  if ($sliders) {
+  ?>
+  <div class="clients">
+    <div class="wrapper work-wrapper">
+      <ul class="client-slider">
+        <?php
+          foreach ($sliders as $slide) {
+            $image = $slide['client_image']['url'] ? $slide['client_image']['url'] : null;
+            $image_alt = $slide['client_image']['alt'] ? $slide['client_image']['alt'] : 'Client image';
+          ?>
+          <li class="list">
+            <figure>
+              <img src="<?php echo $image; ?>" alt="<?php echo $image_alt; ?>">
+            </figure>
+          </li>
+        <?php } ?>
+        <li class="cliect-slide">
+          <a href="#FIXME" class="client-slider-button previous-button" title="Previous slide">Previous slide</a>
+        </li>
+        <li class="cliect-slider">
+          <a href="#FIXME" class="client-slider-button next-button" title="Next slide">Next slide</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+<?php } ?>

@@ -1,22 +1,39 @@
 <?php
-  if (get_row_layout() == 'client_testimonials') {
-    $client_testimonials = get_sub_field('client_testimonial');
+  $client_testimonials = get_sub_field('client_testimonial');
+
+  if ($client_testimonials) {
   ?>
   <section class="client-testimonials">
     <div class="wrapper home-wrapper">
       <h4 class="client-title">Client testimonials</h4>
       <ul class="client-outter-box">
-        <?php foreach ($client_testimonials as $client_testimonial) { ?>
+        <?php
+          foreach ($client_testimonials as $client_testimonial) {
+            $heading = $client_testimonial['title'];
+            $description = $client_testimonial['description'];
+            $image_url = $client_testimonial['image']['url'] ? $client_testimonial['image']['url'] : null;
+            $image_alt = $client_testimonial['image']['alt'] ? $client_testimonial['image']['url'] : $heading;
+
+            if ($heading || $description || $image_url) {
+          ?>
           <li class="client-inner-box">
-            <figure>
-              <img src="<?php echo $client_testimonial['image']['url']; ?>" class="client-image" alt="<?php echo $client_testimonial['image']['alt']; ?>">
-            </figure>
-            <div class="content">
-              <h5 class="client-heading"><?php echo $client_testimonial['title'] ?></h5>
-              <p class="client-paragraph"><?php echo $client_testimonial['description'] ?></p>
-            </div>
+            <?php if ($image_url) { ?>
+              <figure>
+                <img src="<?php echo $image_url; ?>" class="client-image" alt="<?php echo $image_alt; ?>">
+              </figure>
+            <?php }
+              if ($heading || $description) {
+              ?>
+              <div class="content">
+                <?php
+                  echo $heading ? '<h5 class="client-heading">'. $heading .'</h5>' : null;
+                  echo $description ? '<p class="client-paragraph">'. $description .'</p>' : null;
+                ?>
+              </div>
+            <?php } ?>
           </li>
-        <?php } ?>
+        <?php }
+          } ?>
         <li class="client-slider-action">
           <a href="#FIXME" class="client-slider-button previous-slide" title="Previous slide">Previous slide</a>
         </li>

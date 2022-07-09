@@ -6,11 +6,18 @@
   if (have_rows('contact_page')) {
     while (have_rows('contact_page')) {
       the_row();
-      ?>
-        <?php get_template_part('template-parts/pages/contact/content', 'contact-us'); ?>
-        <?php get_template_part('template-parts/pages/contact/content', 'lets-chat'); ?>
-        <?php get_template_part('template-parts/pages/contact/content', 'hiring'); ?>
-      <?php
+
+      switch (get_row_layout()) {
+        case 'contact_us_section':
+          get_template_part('template-parts/pages/contact/content', 'contact-us');
+          break;
+        case 'let_chat_section':
+          get_template_part('template-parts/pages/contact/content', 'lets-chat');
+          break;
+        case 'hiring_section':
+          get_template_part('template-parts/pages/contact/content', 'hiring');
+          break;
+      }
     }
   }
   get_footer();

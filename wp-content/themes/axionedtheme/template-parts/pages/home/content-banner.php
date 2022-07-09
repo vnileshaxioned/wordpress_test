@@ -1,17 +1,21 @@
 <?php
-  if (get_row_layout() == 'banner_section') {
-    $video = get_sub_field('banner_video');
-    $content = get_sub_field('banner_content');
+  $video = get_sub_field('banner_video');
+  $content = get_sub_field('banner_content');
+  $video_src = $video['url'];
+  $video_type = $video['mime_type'];
+  
+  if ($video || $content) {
   ?>
   <section class="banner">
     <div class="wrapper home-wrapper">
-      <video class="banner-video" autoplay loop muted>
-        <source src="<?php echo $video['url']; ?>" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="banner-content">
-        <?php echo $content; ?>
-      </div>
+      <?php if ($video) { ?>
+        <video class="banner-video" autoplay loop muted>
+          <source src="<?php echo $video_src; ?>" type="<?php echo $video_type; ?>">
+          Your browser does not support the video tag.
+        </video>
+      <?php }
+        echo $content ? '<div class="banner-content">'. $content .'</div>' : null;
+      ?>
     </div>
   </section>
 <?php } ?>

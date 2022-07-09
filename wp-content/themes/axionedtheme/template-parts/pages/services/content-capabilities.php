@@ -2,31 +2,46 @@
   $title = get_sub_field('section_title');
   $contents = get_sub_field('service_content');
 
-  if ($contents != '') {
+  if ($contents || $title) {
   ?>
   <section class="capabilities">
     <div class="wrapper services-wrapper">
-      <h2 class="service-heading"><?php echo $title; ?></h2>
-      <ul class="service-outter-box">
-        <?php
-          foreach ($contents as $content) {
-            $image = $content['content_image']['url'];
-            $image_alt = $content['content_image']['alt'];
-            $heading = $content['content_title'];
-            $paragraph = $content['content_paragraph'];
-            $image_side = $content['image_side'];
-          ?>
-          <li class="service-list <?php echo $image_side; ?>">
-            <figure class="service-img">
-              <img src="<?php echo $image ? $image : "https://dummyimage.com/468x234/000/fff.jpg"; ?>" alt="<?php echo $image_alt ? $image_alt : $heading; ?>">
-            </figure>
-            <div class="service-content">
-              <h3 class="service-title"><?php echo $heading ? $heading : "Heading goes here"; ?></h3>
-              <p class="service-paragraph"><?php echo $paragraph ? $paragraph : "Paragraph goes here"; ?></p>
-            </div>
-          </li>
-          <?php } ?>
-      </ul>
+      <?php
+        echo $title ? '<h2 class="service-heading">'. $title .'</h2>' : null;
+
+        if ($contents) {
+        ?>
+        <ul class="service-outter-box">
+          <?php
+            foreach ($contents as $content) {
+              $heading = $content['content_title'];
+              $paragraph = $content['content_paragraph'];
+              $image = $content['content_image']['url'] ? $content['content_image']['url'] : null;
+              $image_alt = $content['content_image']['alt'] ? $content['content_image']['alt'] : $heading;
+              $image_side = $content['image_side'];
+
+              if ($heading || $paragraph || $image) {
+            ?>
+            <li class="service-list <?php echo $image_side; ?>">
+              <?php if ($image) { ?>
+                <figure class="service-img">
+                  <img src="<?php echo $image; ?>" alt="<?php echo $image_alt; ?>">
+                </figure>
+              <?php }
+                if ($heading || $paragraph) {
+                ?>
+                <div class="service-content">
+                  <?php 
+                    echo $heading ? '<h3 class="service-title">'. $heading .'</h3>' : null;
+                    echo $paragraph ? '<p class="service-paragraph">'. $paragraph .'</p>' : null;
+                  ?>
+                </div>
+              <?php } ?>
+            </li>
+          <?php }
+            } ?>
+        </ul>
+      <?php } ?>
     </div>
   </section>
 <?php } ?>
