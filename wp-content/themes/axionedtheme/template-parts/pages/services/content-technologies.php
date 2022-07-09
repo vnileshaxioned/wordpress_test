@@ -30,7 +30,7 @@
               $tab_title = $content['tab_title'];
               $tab_images = $content['tab_images'];
 
-              if ($tab_title || $tab_images) {
+              if ($tab_title && $tab_images) {
                 foreach ($tab_images as $tab_image) {
                 $image = $tab_image['image']['url'] ? $tab_image['image']['url'] : null;
                 $image_alt = $tab_image['image']['alt'] ? $tab_image['image']['alt'] : $tab_title;
