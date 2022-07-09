@@ -1,6 +1,7 @@
 <?php
-  if (get_row_layout() == 'work_section') {
-    $works = get_sub_field('work_content');
+  $works = get_sub_field('work_content');
+
+  if ($works) {
   ?>
   <section class="work">
     <div class="wrapper home-wrapper">
@@ -11,15 +12,31 @@
             $title = $work->post_title;
             $excerpt = $work->post_excerpt;
             $image = get_field('image', $post_id);
+            $image_url = $image['url'] ? $image['url'] : null;
+            $image_alt = $image['alt'] ? $image['alt'] : $title;
+
+            if ($title || $excerpt || $image_url) {
           ?>
           <li class="inner-box">
-            <a href="#FIXME" class="work-link"><img src="<?php echo $image['url']; ?>" class="work-image" alt="<?php echo $image['alt']; ?>"></a>
-            <div class="content">
-              <h3 class="work-heading"><?php echo $title; ?></h3>
-              <p class="work-paragraph"><?php echo $excerpt; ?></p>
-            </div>
+            <?php if ($image_url) { ?>
+              <a href="#FIXME" class="work-link">
+                <figure>
+                  <img src="<?php echo $image_url; ?>" class="work-image" alt="<?php echo $image_alt; ?>">
+                </figure>
+              </a>
+            <?php }
+              if ($title || $excerpt) {
+              ?>
+              <div class="content">
+                <?php
+                  echo $title ? '<h3 class="work-heading">'. $title .'</h3>' : null;
+                  echo $excerpt ? '<p class="work-paragraph">'. $excerpt .'</p>' : null;
+                ?>
+              </div>
+            <?php } ?>
           </li>
-        <?php } ?>
+        <?php }
+          } ?>
       </ul>
     </div>
   </section>

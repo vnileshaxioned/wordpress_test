@@ -17,42 +17,47 @@
         if ($title || $contents) {
         ?>
         <div class="global-content">
-          <?php echo $title ? '<h2 class="about-heading">'. $title .'</h2>' : null;?>
-          <ul class="global-inner-content">
-            <?php
-              foreach ($contents as $content) {
-                $heading = $content['content_title'];
-                $all_list = $content['content_list'];
-                $image = $content['content_image']['url'] ? $content['content_image']['url'] : null;
-                $image_alt = $content['content_image']['alt'] ? $content['content_image']['alt'] : $heading;
-                
-                if ($heading || $all_list || $image) {
-              ?>
-              <li class="global-list">
-                <?php if ($image) { ?>
-                  <figure>
-                    <img src="<?php echo $image; ?>" alt="<?php echo $image_alt; ?>">
-                  </figure>
-                <?php }
-                  echo $heading ? '<h3 class="global-list-heading">'. $heading .'</h3>' : null;
+          <?php
+            echo $title ? '<h2 class="about-heading">'. $title .'</h2>' : null;
 
-                  if ($all_list) {
-                  ?>
-                  <ul class="global-list-content">
-                    <?php
-                      foreach ($all_list as $lists) {
-                        $single_list = $lists['list'];
-                      ?>
-                      <li class="global-inner-list">
-                        <span><?php echo $single_list; ?></span>
-                      </li>
-                    <?php } ?>
-                  </ul>
-                <?php } ?>
-              </li>
-            <?php }
-              } ?>
-          </ul>
+            if ($contents) {
+            ?>
+            <ul class="global-inner-content">
+              <?php
+                foreach ($contents as $content) {
+                  $heading = $content['content_title'];
+                  $all_list = $content['content_list'];
+                  $image = $content['content_image']['url'] ? $content['content_image']['url'] : null;
+                  $image_alt = $content['content_image']['alt'] ? $content['content_image']['alt'] : $heading;
+                  
+                  if ($heading || $all_list || $image) {
+                ?>
+                <li class="global-list">
+                  <?php if ($image) { ?>
+                    <figure>
+                      <img src="<?php echo $image; ?>" alt="<?php echo $image_alt; ?>">
+                    </figure>
+                  <?php }
+                    echo $heading ? '<h3 class="global-list-heading">'. $heading .'</h3>' : null;
+
+                    if ($all_list) {
+                    ?>
+                    <ul class="global-list-content">
+                      <?php
+                        foreach ($all_list as $lists) {
+                          $single_list = $lists['list'];
+                        ?>
+                        <li class="global-inner-list">
+                          <span><?php echo $single_list; ?></span>
+                        </li>
+                      <?php } ?>
+                    </ul>
+                  <?php } ?>
+                </li>
+              <?php }
+                } ?>
+            </ul>
+          <?php } ?>
         </div>
       <?php } ?>
     </div>

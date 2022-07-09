@@ -1,7 +1,8 @@
 <?php
-  if (get_row_layout() == 'let_chat_section') {
-    $title = get_sub_field('section_title');
-    $contents = get_sub_field('section_content');
+  $title = get_sub_field('section_title');
+  $contents = get_sub_field('section_content');
+
+  if ($title || $contents) {
   ?>
   <section class="lets-chat">
     <div class="wrapper section-wrapper">
@@ -9,26 +10,53 @@
       <ul class="contact-outter-box">
         <?php
           foreach ($contents as $content) {
-            $image = $content['profile_image']['url'];
-            $image_alt = $content['profile_image']['alt'];
-            $icon = $content['chat_icon']['url'];
-            $icon_alt = $content['chat_icon']['alt'];
             $name = $content['name'];
             $position = $content['position'];
             $url_title = $content['url_title'];
             $chat_url = $content['chat_url'];
+            $icon = $content['chat_icon']['url'] ? $content['chat_icon']['url'] : null;
+            $icon_alt = $content['chat_icon']['alt'] ? $content['chat_icon']['url'] : $url_title;
+            $image = $content['profile_image']['url'] ? $content['profile_image']['url'] : null;
+            $image_alt = $content['profile_image']['alt'] ? $content['profile_image']['alt'] : $name;
+
+            if ($name || $position || $url_title || $chat_url || $icon || $image) {
           ?>
           <li class="chat-list">
-            <figure>
-              <img src="<?php echo $image; ?>" alt="<?php echo $image_alt; ?>">
-            </figure>
-            <div class="chat-content">
-              <h5 class="chat-head"><?php echo $name; ?></h5>
-              <p class="chat-position"><?php echo $position; ?></p>
-              <p><a href="<?php echo $chat_url; ?>" class="chat-link" target="_blank" title="<?php echo $url_title; ?>"><img src="<?php echo $icon; ?>" alt="<?php echo $icon_alt; ?>"><?php echo $url_title; ?></a></p>
-            </div>
+            <?php 
+              echo $chat_url ? '<a href="'. $chat_url .'" target="_blank">' : null;
+
+              if ($image) {  
+              ?>
+              <figure>
+                <img src="<?php echo $image; ?>" alt="<?php echo $image_alt; ?>">
+              </figure>
+            <?php }
+              if ($name || $position || $url_title || $chat_url || $icon) {
+              ?>
+              <div class="chat-content">
+                <?php
+                  echo $name ? '<h5 class="chat-head">'. $name .'</h5>' : null;
+                  echo $position ? '<p class="chat-position">'. $position .'</p>' : null;
+
+                  if ($url_title || $icon) {
+                ?>
+                  <p class="chat-link">
+                    <?php if ($icon) { ?>
+                      <figure>
+                        <img src="<?php echo $icon; ?>" alt="<?php echo $icon_alt; ?>">
+                      </figure>
+                    <?php } 
+                      echo $url_title ? '<span class="chat-link-text">'. $url_title .'</span>' : null;
+                    ?>
+                    <span class="chat-link-text"><?php echo $url_title; ?></span>
+                  </p>
+                <?php } ?>
+              </div>
+            <?php }
+              echo $chat_url ? '</a>' : null;?>
           </li>
-          <?php } ?>
+        <?php }
+          } ?>
       </ul>
     </div>
   </section>
