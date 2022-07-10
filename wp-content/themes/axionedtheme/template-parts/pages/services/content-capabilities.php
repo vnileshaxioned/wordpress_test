@@ -5,9 +5,9 @@
   if ($contents || $title) {
   ?>
   <section class="capabilities">
-    <div class="wrapper services-wrapper">
+    <div class="wrapper inner-wrapper">
       <?php
-        echo $title ? '<h2 class="service-heading">'. $title .'</h2>' : null;
+        echo $title ? '<h2 class="main-heading">'. $title .'</h2>' : null;
 
         if ($contents) {
         ?>

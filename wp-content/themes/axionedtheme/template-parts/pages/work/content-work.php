@@ -9,8 +9,8 @@
   if ($query->have_posts()) {
   ?>
   <section class="works">
-    <div class="wrapper work-wrapper">
-      <h2 class="work-title">Our work</h2>
+    <div class="wrapper inner-wrapper">
+      <?php echo $title ? '<h2 class="main-heading">'. $title .'</h2>' : null; ?>
       <ul class="our-work">
         <?php
           while ($query->have_posts()) {

@@ -18,7 +18,7 @@
         ?>
         <div class="about-content">
           <?php
-            echo $title ? '<h2 class="about-heading">'. $title .'</h2>' : null;
+            echo $title ? '<h2 class="main-heading">'. $title .'</h2>' : null;
             echo $paragraph ? '<div class="wysiwyg-editor">'. $paragraph .'</div>' : null;
           ?>
         </div>

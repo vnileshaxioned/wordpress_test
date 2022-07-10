@@ -5,8 +5,8 @@
   if ($title || $contents) {
   ?>
   <section class="lets-chat">
-    <div class="wrapper section-wrapper">
-      <h4 class="contact-us-heading"><?php echo $title; ?></h4>
+    <div class="wrapper inner-wrapper">
+      <?php echo $title ? '<h2 class="main-heading">'. $title .'</h2>' : null; ?>
       <ul class="contact-outter-box">
         <?php
           foreach ($contents as $content) {
@@ -40,7 +40,7 @@
 
                   if ($url_title || $icon) {
                 ?>
-                  <p class="chat-link">
+                  <div class="chat-link">
                     <?php if ($icon) { ?>
                       <figure>
                         <img src="<?php echo $icon; ?>" alt="<?php echo $icon_alt; ?>">
@@ -48,8 +48,7 @@
                     <?php } 
                       echo $url_title ? '<span class="chat-link-text">'. $url_title .'</span>' : null;
                     ?>
-                    <span class="chat-link-text"><?php echo $url_title; ?></span>
-                  </p>
+                  </div>
                 <?php } ?>
               </div>
             <?php }
