@@ -17,10 +17,10 @@
             </figure>
           </li>
         <?php } ?>
-        <li class="client-slider">
+        <li class="client-slider-action">
           <a href="#FIXME" class="client-slider-button previous-button" title="Previous slide">Previous slide</a>
         </li>
-        <li class="client-slider">
+        <li class="client-slider-action">
           <a href="#FIXME" class="client-slider-button next-button" title="Next slide">Next slide</a>
         </li>
       </ul>
