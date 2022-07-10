@@ -1,4 +1,5 @@
 <?php
+  $title = get_sub_field('section_title');
   $args = array(
     'post_type' => 'work',
     'order' => 'ASC',
@@ -6,7 +7,7 @@
   );
 
   $query = new WP_Query($args);
-  if ($query->have_posts()) {
+  if ($query->have_posts() || $title) {
   ?>
   <section class="works">
     <div class="wrapper inner-wrapper">

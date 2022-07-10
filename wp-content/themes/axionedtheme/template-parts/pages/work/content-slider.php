@@ -17,7 +17,7 @@
             </figure>
           </li>
         <?php } ?>
-        <li class="client-slide">
+        <li class="client-slider">
           <a href="#FIXME" class="client-slider-button previous-button" title="Previous slide">Previous slide</a>
         </li>
         <li class="client-slider">
