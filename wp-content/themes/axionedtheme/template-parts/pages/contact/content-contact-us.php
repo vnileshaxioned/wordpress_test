@@ -33,7 +33,7 @@
                 <div class="contact-content">
                   <?php
                     echo $heading ? '<h3 class="contact-head">'. $heading .'</h3>' : null;
-                    echo $address ? '<p class="contact-address">'. $heading .'</p>' : null;
+                    echo $address ? '<p class="contact-address">'. $address .'</p>' : null;
                     echo $contact_number ? '<p class="tel-number"><a href="tel:'. $contact_number .'" title="'. $contact_number .'">T: '. $contact_number .'</a></p>' : null;
                   ?>
                 </div>
