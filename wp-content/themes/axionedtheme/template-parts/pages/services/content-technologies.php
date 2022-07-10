@@ -5,9 +5,9 @@
   if ($contents || $title) {
   ?>
   <section class="tools">
-    <div class="wrapper services-wrapper">
+    <div class="wrapper inner-wrapper">
       <?php
-        echo $title ? '<h2 class="tools-heading">'. $title .'</h2>' : null;
+        echo $title ? '<h2 class="main-heading">'. $title .'</h2>' : null;
         
         if ($contents) {
         ?>
@@ -37,7 +37,9 @@
             ?>
             <li class="tools-image-list" data-list-name="<?php echo $tab_title; ?>">
               <figure class="image-list">
-                <a href="#FIXME" target="_blank" title="<?php echo $image_alt; ?>"><img src="<?php echo $image; ?>" alt="<?php echo $image_alt; ?>"></a>
+                <a href="#FIXME" target="_blank" class="tab-images" title="<?php echo $image_alt; ?>">
+                  <img src="<?php echo $image; ?>" alt="<?php echo $image_alt; ?>">
+                </a>
               </figure>
             </li>
           <?php }

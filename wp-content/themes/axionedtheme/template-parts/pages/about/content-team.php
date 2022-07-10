@@ -18,7 +18,7 @@
         ?>
         <div class="global-content">
           <?php
-            echo $title ? '<h2 class="about-heading">'. $title .'</h2>' : null;
+            echo $title ? '<h2 class="main-heading">'. $title .'</h2>' : null;
 
             if ($contents) {
             ?>

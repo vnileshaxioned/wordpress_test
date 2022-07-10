@@ -4,7 +4,7 @@
   if ($sliders) {
   ?>
   <div class="clients">
-    <div class="wrapper work-wrapper">
+    <div class="wrapper inner-wrapper">
       <ul class="client-slider">
         <?php
           foreach ($sliders as $slide) {
@@ -17,10 +17,10 @@
             </figure>
           </li>
         <?php } ?>
-        <li class="cliect-slide">
+        <li class="client-slide">
           <a href="#FIXME" class="client-slider-button previous-button" title="Previous slide">Previous slide</a>
         </li>
-        <li class="cliect-slider">
+        <li class="client-slider">
           <a href="#FIXME" class="client-slider-button next-button" title="Next slide">Next slide</a>
         </li>
       </ul>

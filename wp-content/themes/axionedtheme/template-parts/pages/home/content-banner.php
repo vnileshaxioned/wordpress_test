@@ -7,7 +7,7 @@
   if ($video || $content) {
   ?>
   <section class="banner">
-    <div class="wrapper home-wrapper">
+    <div class="wrapper inner-wrapper">
       <?php if ($video) { ?>
         <video class="banner-video" autoplay loop muted>
           <source src="<?php echo $video_src; ?>" type="<?php echo $video_type; ?>">

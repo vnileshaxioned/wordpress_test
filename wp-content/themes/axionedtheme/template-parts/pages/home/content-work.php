@@ -4,7 +4,7 @@
   if ($works) {
   ?>
   <section class="work">
-    <div class="wrapper home-wrapper">
+    <div class="wrapper inner-wrapper">
       <ul class="outter-box">
         <?php
           foreach ($works as $work) {

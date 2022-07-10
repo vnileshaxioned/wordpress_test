@@ -18,7 +18,7 @@
         ?>
         <div class="client-content">
           <?php
-            echo $title ? '<h2 class="client-title">'. $title .'</h2>' : null;
+            echo $title ? '<h2 class="main-heading">'. $title .'</h2>' : null;
 
             if ($client_testimonials) {
             ?>

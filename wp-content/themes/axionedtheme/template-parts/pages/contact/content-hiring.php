@@ -5,7 +5,9 @@
   ?>
   <section class="hiring">
     <div class="wrapper inner-wrapper">
-      <?php echo $title; ?>
+      <div class="wysiwyg-editor">
+        <?php echo $title; ?>
+      </div>
     </div>
   </section>
 <?php } ?>

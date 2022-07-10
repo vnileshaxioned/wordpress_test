@@ -1,11 +1,12 @@
 <?php
+  $title = get_sub_field('section_title');
   $client_testimonials = get_sub_field('client_testimonial');
 
-  if ($client_testimonials) {
+  if ($title || $client_testimonials) {
   ?>
   <section class="client-testimonials">
-    <div class="wrapper home-wrapper">
-      <h4 class="client-title">Client testimonials</h4>
+    <div class="wrapper inner-wrapper">
+      <?php echo $title ? '<h2 class="main-heading">'. $title .'</h2>' : null; ?>
       <ul class="client-outter-box">
         <?php
           foreach ($client_testimonials as $client_testimonial) {
