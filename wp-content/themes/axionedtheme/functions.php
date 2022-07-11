@@ -53,9 +53,35 @@ function work_post_type() {
     'exclude_from_search' => true,
     'publicly_queryable'  => true,
     'capability_type'     => 'page',
-    'taxonomies'          => array('post_tag' ),
   );
   register_post_type( 'work', $args );
+}
+
+add_action( 'init', 'custom_tag_taxonomy');
+function custom_tag_taxonomy() {
+  $labels = array(
+    'name' => _x('Tags', 'taxonomy general name'),
+    'singular_name' => _x('Tag', 'taxonomy_singular_name'),
+    'search_items' => __('Search Tags'),
+    'all items' => __('All Tags'),
+    'parent_item' => __('Parent Tag'),
+    'parent_item_colon' => __('Parent Tag:'),
+    'edit_item' => __('Edit Tag'),
+    'update_item' => __('Update Tag'),
+    'add_new_item' => __('Add New Tag'),
+    'new_item_name' => __('New Tag Name'),
+    'menu_name' => __('Tags'),
+  );
+
+  register_taxonomy('Tags', array('work'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'tag' ),
+  ));
 }
 
 add_filter('use_block_editor_for_post', '__return_false');
