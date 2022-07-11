@@ -21,7 +21,6 @@
         <ul class="all-tags">
           <?php
             foreach ($all_tags as $tag_list) {
-              print_r($tag_list);
               $tag_slug = $tag_list->slug;
               $tag_name = $tag_list->name; ?>
             <li class="tag-list">
