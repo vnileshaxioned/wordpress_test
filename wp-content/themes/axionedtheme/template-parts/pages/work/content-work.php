@@ -1,7 +1,9 @@
 <?php
+  if ($_GET['tag_name']) {
+    $tag_name = $_GET['tag_name'];
+  }
   $title = get_sub_field('section_title');
   $all_tags = get_tags();
-  $tag_name = $_GET['tag_name'];
   $posts_per_page = 12;
   $args = array(
     'post_type' => 'work',
@@ -24,7 +26,7 @@
               $tag_slug = $tag_list->slug;
               $tag_name = $tag_list->name; ?>
             <li class="tag-list">
-              <a href="#FIXME" class="work-tag" title="<?php echo $tag_name; ?>"><?php echo $tag_name; ?></a>
+              <a href="./?tag_name=<?php echo $tag_slug; ?>" class="work-tag" title="<?php echo $tag_name; ?>"><?php echo $tag_name; ?></a>
             </li>
           <?php } ?>
         </ul>
