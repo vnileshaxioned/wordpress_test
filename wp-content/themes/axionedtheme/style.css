@@ -350,6 +350,23 @@ header .wrapper {
 .works .wrapper { padding-bottom: 0; }
 .works .main-heading { margin: 68px 6% 0; }
 
+.work-tag {
+  color: gray;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all .3s ease;
+}
+
+.filter-search {
+  margin: 10px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.all-tags { flex-basis: 70%; }
+.tag-list { margin-right: 2%; }
+
 .our-work {
   margin: 43px 6% 0;
   display: flex;
@@ -378,6 +395,7 @@ header .wrapper {
 }
 
 .work-list .content {
+  width: 70%;
   position: absolute;
   bottom: 20px;
   left: 9%;
@@ -394,6 +412,18 @@ header .wrapper {
   color: var(--background-color);
   font-size: 16px;
   line-height: 1.5;
+}
+
+.main-content {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-content-image,
+.main-left-content {
+    flex-basis: 40%;
 }
 /* our work section started here */
 
@@ -567,6 +597,7 @@ header .wrapper {
   margin: 67px 9.8% 0;
 }
 
+.work-outter-box,
 .service-outter-box {
   width: 80.6%;
   padding-top: 42px;
@@ -576,8 +607,14 @@ header .wrapper {
   flex-direction: column;
 }
 
-.service-outter-box .right { flex-direction: row-reverse; }
+.work-outter-box .right,
+.service-outter-box .right {
+  flex-direction: row-reverse;
+}
 
+.our-work .work-list { padding-bottom: 0; }
+
+.work-list,
 .service-list {
   padding-bottom: 60px;
   display: flex;
@@ -585,9 +622,17 @@ header .wrapper {
   justify-content: space-between;
 }
 
-.service-img { flex-basis: 46.8%; }
-.service-content { flex-basis: 46.8%; }
+.work-img,
+.service-img {
+  flex-basis: 46.8%;
+}
 
+.work-content,
+.service-content {
+  flex-basis: 46.8%;
+}
+
+.work-title,
 .service-title {
   margin: 4px 0 27px;
   display: inline-block;
@@ -889,7 +934,11 @@ footer .wrapper {
   .client-content .client-slider-button:hover { color: #fff; }
   .client-inner-box:hover { transform: translateY(-10px); }
   .image-list:hover { transform: scale(1.5); }
-  .list-name:hover { color: #000; }
+
+  .work-tag:hover,
+  .list-name:hover {
+    color: #000;
+  }
 
   .contact-address:hover,
   .tel-number a:hover,
