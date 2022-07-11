@@ -211,7 +211,7 @@ header .wrapper {
 
 .banner-video {
   width: 100%;
-  max-height: 535px;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -291,7 +291,7 @@ header .wrapper {
   transition: all .3s ease;
 }
 
-li.client-inner-box:nth-child(2) { margin: 0 0 0 3.7%; }
+.client-inner-box:nth-child(2) { margin: 0 0 0 3.7%; }
 
 .client-inner-box figure {
   width: 52%;
@@ -877,7 +877,7 @@ footer .wrapper {
 =================================*/ 
 
 /*media query starts*/
-/*media query for 995px starts here*/
+/*media query for hover starts here*/
 @media only screen and (min-width: 995px) {
   .footer-head:hover,
   .menu-item a:hover {
@@ -896,5 +896,59 @@ footer .wrapper {
   .chat-link-text:hover {
     color: #E31C79;
   }
+}
 
-}  
+/*media query for 995px starts here*/
+@media only screen and (max-width: 995px) {
+  .banner-content { top: 33.5%; }
+  .banner-content h2 { font-size: 48px; }
+  .banner .inner-wrapper { height: 578px; }
+  li.client-inner-box:nth-child(2) { margin-left: .7%; }
+  .work-list { margin-right: 1.2%; }
+  .work-list a { height: 270px; }
+  .work-list .work-heading { font-size: 24px; }
+  .work-list .work-paragraph { font-size: 14px; }
+  .main-heading { font-size: 32px; }
+  .team-content { padding: 22px 20px; }
+  .team-title { font-size: 22px; }
+
+  .team-content-list,
+  .team-paragraph {
+    font-size: 14px;
+  }
+
+  .tools-image-box { justify-content: center; }
+
+  .contact-outter-box {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .chat-list { flex-basis: 46.3%; }
+  .contact-content { padding: 18px 5%; }
+
+  .contact-list {
+    flex-basis: 45.3%;
+    margin-bottom: 20px;
+  }
+
+  .contact-head { font-size: 26px; }
+
+  .tel-number a,
+  .contact-address {
+    margin: 6px 2% 0;
+    font-size: 14px;
+  }
+}
+
+
+/*media query for 540px starts here*/
+@media only screen and (max-width: 540px) {
+  .work-list {
+    margin-right: 1.2%;
+    flex-basis: 48.5%;
+  }
+
+  .work-list:nth-child(3n) { margin-right: 1.2%; }
+  .work-list:nth-child(2n) { margin-right: 0; }
+}
