@@ -377,7 +377,7 @@ header .wrapper {
 .work-list {
   margin: 0 13px 15px 0;
   position: relative;
-  flex-basis: 32.5%;
+  flex-basis: 32.4%;
 }
 
 .work-list:nth-child(3n) { margin-right: 0; }
