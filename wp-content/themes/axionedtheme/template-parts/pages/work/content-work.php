@@ -1,17 +1,18 @@
 <?php
-  if ($_GET['tag_name']) {
-    $tag_name = $_GET['tag_name'];
-  }
   $title = get_sub_field('section_title');
-  $all_tags = get_tags();
   $posts_per_page = 12;
+
+  $all_tags = get_terms(array(
+    'taxonomy' => 'Tags',
+    'hide_empty' => true,
+  ));
+
   $args = array(
     'post_type' => 'work',
     'orderby' => 'title',
     'order' =>'ASC',
     'post_status' => 'publish',
     'posts_per_page' => $posts_per_page,
-    'tag' => $tag_name
   );
   
   $query = new WP_Query($args);
@@ -23,10 +24,11 @@
         <ul class="all-tags">
           <?php
             foreach ($all_tags as $tag_list) {
+              $tag_count = $tag_list->count;
               $tag_slug = $tag_list->slug;
               $tag_name = $tag_list->name; ?>
             <li class="tag-list">
-              <a href="./?tag_name=<?php echo $tag_slug; ?>" class="work-tag" title="<?php echo $tag_name; ?>"><?php echo $tag_name; ?></a>
+              <a href="#FIXME" class="work-tag" data-slug="<?php echo $tag_slug; ?>" data-post="<?php echo $posts_per_page; ?>" title="<?php echo $tag_name; ?>"><?php echo $tag_name; ?></a>
             </li>
           <?php } ?>
         </ul>
