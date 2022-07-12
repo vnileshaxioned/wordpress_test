@@ -9,6 +9,53 @@ function test_theme_script() {
   wp_localize_script( 'custom-script', 'ajax', array('ajaxurl' => admin_url( 'admin-ajax.php' )));
 }
 
+add_action("wp_ajax_custom_search", "custom_search");
+add_action("wp_ajax_nopriv_custom_search", "custom_search");
+function custom_search() {
+  $args = array(
+    'post_type' => 'work',
+    'orderby' => 'title',
+    'order' =>'ASC',
+    'post_status' => 'publish',
+    'posts_per_page' => $_POST['post_per_page'],
+    's' => $_POST['search'],
+  );
+
+  $query = new WP_Query($args);
+  if ($query->have_posts()) {
+    $output = array();
+    while ($query->have_posts()) {
+      $query->the_post();
+      $title = get_the_title();
+      $description = get_the_excerpt();
+      $permalink = get_the_permalink();
+      $image = get_field('image')['url'] ? get_field('image')['url'] : null;
+      $image_alt = get_field('image')['alt'] ? get_field('image')['alt'] : $title;
+
+      if ($title || $description || $image || $permalink) {
+      
+        $result = '';
+        $result .= '<li class="work-list">';
+        $result .= '<a href="'. $permalink .'">';
+        $result .= '<figure>';
+        $result .= '<img src="'.$image .'" alt="'. $image_alt .'">';
+        $result .= '</figure>';
+        $result .= '<div class="content">';
+        $result .= $title ? '<h2 class="work-heading">'. $title .'</h2>' : null;
+        $result .= $description ? '<p class="work-paragraph">'. $description .'</p>' : null;
+        $result .= '</div>';
+        $result .= '</a>';
+        $result .= '</li>';
+        
+        array_push($output, $result);
+      }
+    }
+    wp_reset_postdata();
+    echo json_encode($output);
+    die();
+  }
+}
+
 add_action("wp_ajax_filter_tab", "filter_tab");
 add_action("wp_ajax_nopriv_filter_tab", "filter_tab");
 function filter_tab() {
@@ -18,6 +65,7 @@ function filter_tab() {
     'order' =>'ASC',
     'post_status' => 'publish',
     'posts_per_page' => $_POST['post_per_page'],
+    's' => $_POST['search'],
     'tax_query' => array(
       array(
         'taxonomy' => 'Tags',

@@ -32,14 +32,9 @@
             </li>
           <?php } ?>
         </ul>
-        <form action="" method="post">
-          <div class="form-group">
-            <input type="text" name="s" class="form-content">
-          </div>
-          <div class="form-group">
-            <input type="submit" name="search" class="form-search" value="Search">
-          </div>
-        </form>
+        <div class="form-group">
+          <input type="text" data-post="<?php echo $posts_per_page; ?>" class="form-content">
+        </div>
       </div>
       <ul class="our-work">
         <?php
