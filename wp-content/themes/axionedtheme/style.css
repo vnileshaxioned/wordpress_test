@@ -349,6 +349,7 @@ header .wrapper {
 /* our work section started here */
 .works .wrapper { padding-bottom: 0; }
 .works .main-heading { margin: 68px 6% 0; }
+.tag-list .tag-active { color: #000; }
 
 .work-tag {
   color: gray;
