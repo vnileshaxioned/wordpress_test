@@ -65,7 +65,6 @@ function filter_tab() {
     'order' =>'ASC',
     'post_status' => 'publish',
     'posts_per_page' => $_POST['post_per_page'],
-    's' => $_POST['search'],
     'tax_query' => array(
       array(
         'taxonomy' => 'Tags',

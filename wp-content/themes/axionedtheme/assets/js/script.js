@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  // for tab filter
   $('.work-tag').click(function (e) {
     e.preventDefault();
     var data = $(this);
@@ -15,11 +16,17 @@ $(document).ready(function () {
       datatype: 'json',
       success: function (response) {
         var html = JSON.parse(response);
-        $('.our-work').html(html);
+        if (html) {
+          $('.our-work').html(html);
+        }
+      },
+      error: function (xhr, status, error) {
+        alert('Status: ' + xhr.status + ' ' + error);
       },
     });
   });
 
+  // for search
   $('.form-content').keyup(function (e) { 
     var data = this;
     var userInput = data.value;
@@ -35,7 +42,12 @@ $(document).ready(function () {
       datatype: 'json',
       success: function (response) {
         var html = JSON.parse(response);
-        $('.our-work').html(html);
+        if (html) {
+          $('.our-work').html(html);
+        }
+      },
+      error: function (xhr, status, error) {
+        alert('Status: ' + xhr.status + ' ' + error);
       },
     });
   });;
