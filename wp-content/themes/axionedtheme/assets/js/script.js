@@ -19,4 +19,24 @@ $(document).ready(function () {
       },
     });
   });
+
+  $('.form-content').keyup(function (e) { 
+    var data = this;
+    var userInput = data.value;
+    var postPerPage = $('.form-content').attr('data-post');
+    $.ajax({
+      type: 'post',
+      url: ajax.ajaxurl,
+      data: {
+        action: 'custom_search',
+        search: userInput,
+        post_per_page: postPerPage,
+      },
+      datatype: 'json',
+      success: function (response) {
+        var html = JSON.parse(response);
+        $('.our-work').html(html);
+      },
+    });
+  });;
 });
