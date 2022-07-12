@@ -1,54 +1,56 @@
 $(document).ready(function () {
+  var postPerPage = $('.form-content').attr('data-post');
+
+  searchFilter();
+  
   // for tab filter
   $('.work-tag').click(function (e) {
     e.preventDefault();
     var data = $(this);
-    var tagSlug = $(data).attr('data-slug');
-    var postPerPage = $(data).attr('data-post');
-    $.ajax({
-      type: 'post',
-      url: ajax.ajaxurl,
-      data: {
-        action: 'filter_tab',
-        tag_name: tagSlug,
-        post_per_page: postPerPage,
-      },
-      datatype: 'json',
-      success: function (response) {
-        var html = JSON.parse(response);
-        if (html) {
-          $('.our-work').html(html);
-        }
-      },
-      error: function (xhr, status, error) {
-        alert('Status: ' + xhr.status + ' ' + error);
-      },
-    });
-  });
+    var tagSlug = data.attr('data-slug');
 
+    // remove all tag active class
+    $('.work-tag').each(function (index, list) {
+      $(list).removeClass('tag-active');
+    });
+
+    // add tag active class on clicked element and call searchFilter function
+    if (tagSlug == 'all') {
+      searchFilter();
+      data.addClass('tag-active');
+    } else {
+      searchFilter(tagSlug);
+      data.addClass('tag-active');
+    }
+  });
+  
   // for search
-  $('.form-content').keyup(function (e) { 
+  $('.form-content').keyup(function () {
     var data = this;
     var userInput = data.value;
-    var postPerPage = $('.form-content').attr('data-post');
+    searchFilter('', userInput);
+  });
+  
+  // searchFilter function to call ajax request
+  function searchFilter(tag, search) {
     $.ajax({
       type: 'post',
       url: ajax.ajaxurl,
       data: {
-        action: 'custom_search',
-        search: userInput,
+        action: 'filter_search',
+        tag_name: tag,
+        search: search,
         post_per_page: postPerPage,
       },
       datatype: 'json',
       success: function (response) {
-        var html = JSON.parse(response);
-        if (html) {
-          $('.our-work').html(html);
+        if (response != 0) {
+          $('.our-work').html(response);
         }
       },
       error: function (xhr, status, error) {
         alert('Status: ' + xhr.status + ' ' + error);
       },
     });
-  });;
+  }
 });
