@@ -1,12 +1,16 @@
 <?php
 
 // for option page
-if (function_exists('acf_add_options_page')) {
-  acf_add_options_page(array(
-		'page_title' 	=> 'Client Testimonial',
-		'menu_title'	=> 'Client Testimonial',
-		'menu_slug' 	=> 'client-testimonial',
-	));
+add_action( 'init', 'client_testimonial_option_page');
+function client_testimonial_option_page() {
+  if (function_exists('acf_add_options_page')) {
+    acf_add_options_page(array(
+      'page_title' 	=> 'Client Testimonial',
+      'menu_title'	=> 'Client Testimonial',
+      'menu_slug' 	=> 'client-testimonial',
+      'icon_url'    => 'dashicons-businessperson',
+    ));
+  }
 }
 
 // enqueue the style and script files
