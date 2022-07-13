@@ -13,6 +13,10 @@ add_action("wp_ajax_filter_search", "filter_search");
 add_action("wp_ajax_nopriv_filter_search", "filter_search");
 function filter_search() {
   $post_per_page = $_POST['post_per_page'];
+  $tag_name = $_POST['tag_name'];
+  $search = $_POST['search'];
+
+  // all post query
   $args = array(
     'post_type' => 'work',
     'orderby' => 'title',
@@ -21,27 +25,22 @@ function filter_search() {
     'posts_per_page' => $post_per_page,
   );
   
-  if ($_POST['tag_name']) {
-    $tag_name = $_POST['tag_name'];
-    $tax_query = array(
-      'tax_query' => array(
-        array(
-          'taxonomy' => 'Tags',
-          'field' => 'slug',
-          'terms' => $tag_name
-        )
+  // taxonomy query
+  if ($tag_name) {
+    $args['tax_query'] = array(
+      array(
+        'taxonomy' => 'Tags',
+        'field' => 'slug',
+        'terms' => $tag_name
       )
     );
-    $args_second = array_merge($args, $tax_query);
   }
+  
+  // search query
+  $search ? $args['s'] = $search : null;
 
-  if ($_POST['search']) {
-    $search = $_POST['search'];
-    $search_query = array('s' => $search);
-    $args_second = array_merge($args, $search_query);
-  }
-  $final_args = $args_second ? $args_second : $args;
-  $query = new WP_Query($final_args);
+  $query = new WP_Query($args);
+  $result = '';
   if ($query->have_posts()) {
     while ($query->have_posts()) {
       $query->the_post();
@@ -52,7 +51,7 @@ function filter_search() {
       $image_alt = get_field('image')['alt'] ? get_field('image')['alt'] : $title;
 
       if ($title || $description || $image || $permalink) {
-        $result = '<li class="work-list">';
+        $result .= '<li class="work-list">';
         $result .= '<a href="'. $permalink .'">';
 
         if ($image) {
@@ -70,11 +69,11 @@ function filter_search() {
         $result .= '</li>';
         
       }
-      echo $result;
     }
     wp_reset_postdata();
-    die();
   }
+  echo $result;
+  die();
 }
 
 add_action('after_setup_theme', 'test_theme_setup');
