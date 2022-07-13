@@ -1,5 +1,15 @@
 <?php
 
+// for option page
+if (function_exists('acf_add_options_page')) {
+  acf_add_options_page(array(
+		'page_title' 	=> 'Client Testimonial',
+		'menu_title'	=> 'Client Testimonial',
+		'menu_slug' 	=> 'client-testimonial',
+	));
+}
+
+// enqueue the style and script files
 add_action('wp_enqueue_scripts', 'test_theme_script');
 function test_theme_script() {
   wp_enqueue_style('custom-styling', get_stylesheet_uri());
@@ -9,6 +19,7 @@ function test_theme_script() {
   wp_localize_script( 'custom-script', 'ajax', array('ajaxurl' => admin_url( 'admin-ajax.php' )));
 }
 
+// filter and search function
 add_action("wp_ajax_filter_search", "filter_search");
 add_action("wp_ajax_nopriv_filter_search", "filter_search");
 function filter_search() {
@@ -76,6 +87,7 @@ function filter_search() {
   die();
 }
 
+// theme support
 add_action('after_setup_theme', 'test_theme_setup');
 function test_theme_setup() {
   add_theme_support('title-tag');
@@ -87,6 +99,7 @@ function test_theme_setup() {
   ) );
 }
 
+// custom post type
 add_action( 'init', 'work_post_type');
 function work_post_type() {
   $labels = array(
@@ -123,6 +136,7 @@ function work_post_type() {
   register_post_type( 'work', $args );
 }
 
+// custom taxonomy
 add_action( 'init', 'custom_tag_taxonomy');
 function custom_tag_taxonomy() {
   $labels = array(
@@ -150,6 +164,7 @@ function custom_tag_taxonomy() {
   ));
 }
 
+// for classic editor
 add_filter('use_block_editor_for_post', '__return_false');
 
 ?>
