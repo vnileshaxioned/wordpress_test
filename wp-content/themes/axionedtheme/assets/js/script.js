@@ -1,27 +1,20 @@
 $(document).ready(function () {
-  var postPerPage = $('.form-content').attr('data-post');
-
-  searchFilter();
   
+  searchFilter();
+
   // for tab filter
   $('.work-tag').click(function (e) {
     e.preventDefault();
     var data = $(this);
-    var tagSlug = data.attr('data-slug');
-
+    var tagSlug = data.attr('data-slug') == 'all' ? '' : data.attr('data-slug');
+    
     // remove all tag active class
     $('.work-tag').each(function (index, list) {
       $(list).removeClass('tag-active');
     });
-
-    // add tag active class on clicked element and call searchFilter function
-    if (tagSlug == 'all') {
-      searchFilter();
-      data.addClass('tag-active');
-    } else {
-      searchFilter(tagSlug);
-      data.addClass('tag-active');
-    }
+    
+    searchFilter(tagSlug, '');
+    data.addClass('tag-active');
   });
   
   // for search
@@ -33,6 +26,7 @@ $(document).ready(function () {
   
   // searchFilter function to call ajax request
   function searchFilter(tag, search) {
+    var postPerPage = $('.form-content').attr('data-post');
     $.ajax({
       type: 'post',
       url: ajax.ajaxurl,
