@@ -1,5 +1,27 @@
 <?php
 
+// customizer api
+add_action('customize_register', 'custom_axioned_customizer_register');
+function custom_axioned_customizer_register($wp_customize) {
+  $wp_customize->add_section('home_page_section', array(
+    'title' => 'Home Page Section',
+    'description' => __('Customize your Home page section'),
+  ));
+  $wp_customize->add_setting('theme_background_color', array(
+    'default' => '#201547',
+  ));
+  $wp_customize->add_control('theme_background_color', array(
+    'label' => 'Theme Background Color',
+    'section' => 'home_page_section',
+  ));
+}
+
+// for theme background color using customizer setting
+function axioned_customize_style() {
+  echo '<style type="text/css">body { background-color: '.get_theme_mod('theme_background_color', '#201547').'; }</style>';
+}
+add_action( 'wp_head', 'axioned_customize_style');
+
 // for option page
 add_action( 'init', 'client_testimonial_option_page');
 function client_testimonial_option_page() {
