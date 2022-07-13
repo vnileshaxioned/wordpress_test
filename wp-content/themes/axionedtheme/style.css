@@ -284,14 +284,14 @@ header .wrapper {
 
 .client-inner-box {
   padding: 33px;
-  margin: 0 4.5% 0 6.5%;
+  margin-left: 5%;
   background-color: #fff;
   box-shadow: 0 0 10px #0000001f;
   flex-basis: 35.2%;
   transition: all .3s ease;
 }
 
-.client-inner-box:nth-child(2n) { margin: 0; }
+.client-inner-box:nth-child(2n) { margin-right: 5%; }
 
 .client-inner-box figure {
   width: 52%;
