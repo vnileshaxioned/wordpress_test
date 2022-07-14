@@ -10,11 +10,10 @@ function custom_axioned_customizer_register($wp_customize) {
   $wp_customize->add_setting('theme_background_color', array(
     'default' => '#201547',
   ));
-  $wp_customize->add_control('theme_background_color', array(
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'theme_background_color', array(
     'label' => 'Theme Background Color',
     'section' => 'home_page_section',
-    'type' => 'color',
-  ));
+  )));
 
   $wp_customize->add_setting('custom_wesite_logo', array(
     'default' => '',
