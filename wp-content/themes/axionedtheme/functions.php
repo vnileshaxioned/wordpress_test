@@ -13,6 +13,7 @@ function custom_axioned_customizer_register($wp_customize) {
   $wp_customize->add_control('theme_background_color', array(
     'label' => 'Theme Background Color',
     'section' => 'home_page_section',
+    'type' => 'color',
   ));
 }
 
