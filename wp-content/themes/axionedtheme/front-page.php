@@ -13,7 +13,7 @@
           get_template_part('template-parts/pages/home/content', 'work');
           break;
         case 'client_testimonials':
-          get_template_part('template-parts/pages/home/content', 'client-testimonial');
+          get_template_part('template-parts/pages/options/content', 'client-testimonial');
           break;
       }
     }

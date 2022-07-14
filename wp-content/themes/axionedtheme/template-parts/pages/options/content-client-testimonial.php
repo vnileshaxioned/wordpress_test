@@ -2,7 +2,7 @@
   $show_section = get_sub_field('show_section');
 
   if ($show_section) {
-    $background_image = get_sub_field('background_image');
+    $background_image = $args['background_image'];
     $section_title = get_field('section_title', 'option');
     $contents = get_field('client_testimonial', 'option');
     $image_url = $background_image['url'] ? $background_image['url'] : null;
