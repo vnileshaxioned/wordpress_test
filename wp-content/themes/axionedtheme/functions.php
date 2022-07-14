@@ -19,7 +19,11 @@ function custom_axioned_customizer_register($wp_customize) {
 
 // for theme background color using customizer setting
 function axioned_customize_style() {
-  echo '<style type="text/css">body { background-color: '.get_theme_mod('theme_background_color', '#201547').'; }</style>';
+  $style = '<style type="text/css">';
+  $style .= 'body, header { background-color: '.get_theme_mod('theme_background_color', '#201547').'; }';
+  $style .= '</style>';
+
+  echo $style;
 }
 add_action( 'wp_head', 'axioned_customize_style');
 
