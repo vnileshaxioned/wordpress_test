@@ -7,12 +7,11 @@ $(document).ready(function () {
     e.preventDefault();
     var data = $(this);
     var tagSlug = data.attr('data-slug') == 'all' ? '' : data.attr('data-slug');
-    
+
     // remove all tag active class
-    $('.work-tag').each(function (index, list) {
-      $(list).removeClass('tag-active');
-    });
+    $('.work-tag').parent().children('.work-tag').removeClass('tag-active');
     
+    // add tag active class
     searchFilter(tagSlug, '');
     data.addClass('tag-active');
   });
