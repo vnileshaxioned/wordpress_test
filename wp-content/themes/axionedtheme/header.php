@@ -18,11 +18,12 @@
           $logo = wp_get_attachment_image_src( $custom_logo, 'full' );
           $blog_name = get_bloginfo('name');
           $blog_url = get_bloginfo('url');
+          $customizer_logo = get_theme_mod('custom_wesite_logo') ? get_theme_mod('custom_wesite_logo') : $logo[0];
         ?>
         <h1>
           <a href="<?php echo $blog_url; ?>" class="axioned-logo" title="<?php echo $blog_name; ?>">
             <figure>
-              <img src="<?php echo $logo[0]; ?>" class="axioned-logo-img" alt="<?php echo $blog_name; ?>">
+              <img src="<?php echo $customizer_logo; ?>" class="axioned-logo-img" alt="<?php echo $blog_name; ?>">
             </figure>
           <?php echo $blog_name; ?></a>
         </h1>

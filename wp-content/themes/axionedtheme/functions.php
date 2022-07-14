@@ -15,6 +15,14 @@ function custom_axioned_customizer_register($wp_customize) {
     'section' => 'home_page_section',
     'type' => 'color',
   ));
+
+  $wp_customize->add_setting('custom_wesite_logo', array(
+    'default' => '',
+  ));
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_wesite_logo', array(
+    'label' => 'Edit Website Logo',
+    'section' => 'home_page_section',
+  )));
 }
 
 // for theme background color using customizer setting
