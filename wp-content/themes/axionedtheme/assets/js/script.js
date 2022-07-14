@@ -19,8 +19,7 @@ $(document).ready(function () {
   // for search
   $('.form-content').keyup(function () {
     var data = this;
-    var userInput = data.value;
-    searchFilter('', userInput);
+    searchFilter('', data.value);
   });
   
   // searchFilter function to call ajax request
@@ -37,8 +36,10 @@ $(document).ready(function () {
       },
       datatype: 'json',
       success: function (response) {
-        if (response != 0) {
+        if (response.length) {
           $('.our-work').html(response);
+        } else {
+          $('.our-work').html('<li><span>No Search found</span></li>');
         }
       },
       error: function (xhr, status, error) {
