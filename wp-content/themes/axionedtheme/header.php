@@ -7,11 +7,11 @@
   <meta charset="utf-8">
   <?php wp_head(); ?>
 </head>
-<body>
+<body style="background-color: <?php echo get_theme_mod('theme_background_color', '#201547'); ?>">
   <!--container start-->
   <div class="container">
     <!--header section start-->
-    <header>
+    <header  style="background-color: <?php echo get_theme_mod('theme_background_color', '#201547'); ?>">
       <div class="wrapper">
         <?php
           $custom_logo = get_theme_mod( 'custom_logo' );

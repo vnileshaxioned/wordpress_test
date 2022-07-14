@@ -15,7 +15,8 @@
           get_template_part('template-parts/pages/about/content', 'team');
           break;
         case 'client_testimonials':
-          get_template_part('template-parts/pages/about/content', 'client-testimonial');
+          $args = array('background_image' => get_sub_field('background_image'));
+          get_template_part('template-parts/pages/options/content', 'client-testimonial', $args);
           break;
       }
     }
