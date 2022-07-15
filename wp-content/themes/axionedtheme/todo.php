@@ -13,15 +13,7 @@
           <input type="submit" name="save_task" class="submit-button" value="Save" />
         </div>
       </form>
-      <ul class="todo-task">
-        <li class="todo-list">
-          <p class="task-name">Today's Task</p>
-          <div class="action-button">
-            <a href="#FIXME" class="edit-task" title="Edit">Edit</a>
-            <a href="#FIXME" class="delete-task" title="Delete">Delete</a>
-          </div>
-        </li>
-      </ul>
+      <ul class="todo-task"></ul>
     </div>
   </section>
 
