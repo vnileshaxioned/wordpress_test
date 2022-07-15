@@ -10,7 +10,7 @@
           <input type="text" name="task" class="form-content" placeholder="Task Name" />
         </div>
         <div class="form-group save-button">
-          <input type="submit" name="save_task" class="submit-button" value="Save" />
+          <a href="#FIXME" class="submit-button" title="Save">Save</a>
         </div>
       </form>
       <ul class="todo-task">
