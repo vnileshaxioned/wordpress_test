@@ -24,6 +24,32 @@ function custom_axioned_customizer_register($wp_customize) {
   )));
 }
 
+// for contact form dropdown
+add_filter('wpcf7_form_tag_data_option', 'drop_down_cf', 10, 3);
+function drop_down_cf($data, $options, $args) {
+  $data = [];
+  if (in_array('values', $options)){
+    $args = array(
+      'post_type' => 'session',
+      'orderby' => 'title',
+      'order' =>'ASC',
+      'post_status' => 'publish',
+      'posts_per_page' => 3
+    );
+    $query = new WP_Query( $args );
+    $total_posts = $query->found_posts;
+    if ($query -> have_posts()) {
+      while ($query -> have_posts()) {
+        $query -> the_post();
+        $name = get_field('name');
+        $date = get_field('date');
+        $data[] = $name.' '.$date;
+      }
+    }
+  }
+  return $data;
+}
+
 // for option page
 add_action( 'init', 'client_testimonial_option_page');
 function client_testimonial_option_page() {
@@ -128,23 +154,27 @@ function test_theme_setup() {
 }
 
 // custom post type
-add_action( 'init', 'work_post_type');
-function work_post_type() {
+add_action( 'init', function() {
+  custom_post_type('work', 'dashicons-portfolio');
+  custom_post_type('session', 'dashicons-clock');
+});
+function custom_post_type($cpt, $icon = 'dashicons-admin-post') {
+  $capitalize_cpt = ucfirst($cpt);
   $labels = array(
-    'name'                => _x( 'Work', 'Post Type General Name', 'axionedtheme' ),
-    'singular_name'       => _x( 'Work', 'Post Type Singular Name', 'axionedtheme' ),
-    'menu_name'           => __( 'Work', 'axionedtheme' ),
-    'all_items'           => __( 'All Work', 'axionedtheme' ),
-    'add_new'             => __( 'Add New', 'axionedtheme' ),
-    'edit_item'           => __( 'Edit Work', 'axionedtheme' ),
-    'update_item'         => __( 'Update Work', 'axionedtheme' ),
-    'search_items'        => __( 'Search Work', 'axionedtheme' ),
-    'not_found'           => __( 'Not Found', 'axionedtheme' ),
-    'not_found_in_trash'  => __( 'Not found in Trash', 'axionedtheme' ),
+    'name'                => _x( $capitalize_cpt.'s', 'Post Type General Name', 'customtheme' ),
+    'singular_name'       => _x( $cpt, 'Post Type Singular Name', 'customtheme' ),
+    'menu_name'           => __( $capitalize_cpt.'s', 'customtheme' ),
+    'all_items'           => __( 'All '.$capitalize_cpt.'s', 'customtheme' ),
+    'add_new'             => __( 'Add New', 'customtheme' ),
+    'edit_item'           => __( 'Edit '.$capitalize_cpt, 'customtheme' ),
+    'update_item'         => __( 'Update '.$capitalize_cpt, 'customtheme' ),
+    'search_items'        => __( 'Search '.$capitalize_cpt.'s', 'customtheme' ),
+    'not_found'           => __( 'Not Found', 'customtheme' ),
+    'not_found_in_trash'  => __( 'Not found in Trash', 'customtheme' ),
   );
   $args = array(
-    'label'               => __( 'work', 'axionedtheme' ),
-    'description'         => __( 'work description', 'axionedtheme' ),
+    'label'               => __( $cpt, 'customtheme' ),
+    'description'         => __( $cpt.' description', 'customtheme' ),
     'labels'              => $labels,
     'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail' ),
     'hierarchical'        => true,
@@ -154,14 +184,14 @@ function work_post_type() {
     'show_in_nav_menus'   => true,
     'show_in_admin_bar'   => true,
     'menu_position'       => 4,
-    'menu_icon'           => 'dashicons-portfolio',
+    'menu_icon'           => $icon,
     'can_export'          => true,
     'has_archive'         => true,
     'exclude_from_search' => true,
     'publicly_queryable'  => true,
     'capability_type'     => 'page',
   );
-  register_post_type( 'work', $args );
+  register_post_type( $cpt, $args );
 }
 
 // custom taxonomy
