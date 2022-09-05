@@ -512,6 +512,33 @@ header .wrapper {
 }
 /* contact us section ended here */
 
+/* contact form section started here */
+.wpcf7 {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.wpcf7 p { padding-top: 10px; }
+
+.wpcf7-form-control {
+  width: 98%;
+  padding: 4px;
+  margin-top: 10px;
+}
+
+.wpcf7-select { width: 100%; }
+
+.wpcf7-submit {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: var(--background-color);
+  color: #fff;
+  transition: all .3s ease;
+}
+/* contact form section ended here */
+
 /* lets chat section started here */
 .lets-chat .inner-wrapper { background-color: #F5F5F5; }
 .lets-chat .main-heading { margin: 54px 5% 36px; }
@@ -1008,6 +1035,7 @@ footer .wrapper {
   .client-inner-box:hover { transform: translateY(-10px); }
   .image-list:hover { transform: scale(1.5); }
   .delete-task:hover { background-color: var(--red-hover); }
+  .wpcf7-submit:hover { background-color: var(--black-color); }
 
   .edit-task:hover,
   .submit-button:hover {
