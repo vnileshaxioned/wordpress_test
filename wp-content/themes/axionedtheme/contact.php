@@ -11,6 +11,9 @@
         case 'contact_us_section':
           get_template_part('template-parts/pages/contact/content', 'contact-us');
           break;
+        case 'form_section':
+          get_template_part('template-parts/pages/contact/content', 'form');
+          break;
         case 'let_chat_section':
           get_template_part('template-parts/pages/contact/content', 'lets-chat');
           break;
