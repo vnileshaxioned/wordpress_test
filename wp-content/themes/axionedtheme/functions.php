@@ -45,6 +45,7 @@ function drop_down_cf($data, $options, $args) {
         $date = get_field('date');
         $data[] = $name.' '.$date;
       }
+      wp_reset_postdata();
     }
   }
   return $data;
