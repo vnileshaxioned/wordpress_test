@@ -1,4 +1,31 @@
 $(document).ready(function () {
+  var timeFormatted = [];
+  $('.wpcf7-select option').each(function () {
+    var option = $(this).text().split(' '),
+      formatTime = moment.tz(option[1], 'Asia/Kolkata').format(),
+      date = new Date(formatTime),
+      options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      },
+      longDate = date.toLocaleString('en-US', options),
+      hours = date.getHours(),
+      minutes = date.getMinutes();
+    if (hours > 12 && hours < 24) {
+      timeFormatted.push(option[0] + ' ' + (longDate + ' ' + hours + ':' + minutes + ' pm'));
+    } else {
+      timeFormatted.push(option[0] + ' ' + (longDate + ' ' + hours + ':' + minutes + ' am'));
+    }
+  });
+
+  if (timeFormatted) {
+    $('.wpcf7-select').html('');
+    for (var i = 0; i < timeFormatted.length; i++) {
+      $('.wpcf7-select').append(`<option value="${timeFormatted[i]}">${timeFormatted[i]}</option>`);
+    }
+  }
+
   // todo page started here
   if (localStorage.getItem('task')) {
     var task = JSON.parse(localStorage.getItem('task'));
