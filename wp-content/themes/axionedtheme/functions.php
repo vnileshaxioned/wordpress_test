@@ -34,7 +34,7 @@ function drop_down_cf($data, $options, $args) {
       'orderby' => 'title',
       'order' =>'ASC',
       'post_status' => 'publish',
-      'posts_per_page' => 3
+      'posts_per_page' => 10
     );
     $query = new WP_Query( $args );
     $total_posts = $query->found_posts;
@@ -42,7 +42,7 @@ function drop_down_cf($data, $options, $args) {
       while ($query -> have_posts()) {
         $query -> the_post();
         $name = get_field('name');
-        $date = get_field('date');
+        $date = date_i18n("c", strtotime(get_field('date')));
         $data[] = $name.' '.$date;
       }
       wp_reset_postdata();
@@ -71,6 +71,8 @@ function test_theme_script() {
   wp_enqueue_style('custom-fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
   wp_enqueue_script('custom-script', get_template_directory_uri().'/assets/js/script.js', array('custom-jquery'), '', true);
   wp_enqueue_script('custom-jquery', get_stylesheet_directory_uri().'/assets/vendor/jquery-1.8.3.min.js', '', '', true);
+  wp_enqueue_script('custom-moment-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js', '', '');
+  wp_enqueue_script('custom-momenttz-js', 'https://momentjs.com/downloads/moment-timezone-with-data.js', '', '');
   wp_localize_script( 'custom-script', 'ajax', array('ajaxurl' => admin_url( 'admin-ajax.php' )));
 }
 
