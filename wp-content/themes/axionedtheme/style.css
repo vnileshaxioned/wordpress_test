@@ -513,6 +513,12 @@ header .wrapper {
 /* contact us section ended here */
 
 /* contact form section started here */
+.contact-form .main-heading {
+  margin: 0 auto;
+  display: block;
+  width: fit-content;
+}
+
 .wpcf7 {
   width: 40%;
   margin: 0 auto;
